@@ -1,0 +1,19 @@
+{
+  "name": "@gpa-lab/rich-text-experiment",
+  "version": "0.0.1",
+  "license": "MIT",
+  "author": "U.S. Department of State, Bureau of Global Public Affairs Digital Lab <gpa-lab@america.gov>",
+  "description": "Test functionality for different rich text editor libraries",
+  "scripts": {
+    "start": "parcel serve ./src/index.html"
+  },
+  "dependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.0.0-beta.2",
+    "parcel": "^2.0.0-beta.2",
+    "prop-types": "^15.7.2"
+  }
+}
