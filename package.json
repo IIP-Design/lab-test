@@ -5,7 +5,7 @@
   "author": "U.S. Department of State, Bureau of Global Public Affairs Digital Lab <gpa-lab@america.gov>",
   "description": "Testbed for experimental projects",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "postinstall": "(cd rich-text-experiment && npm install)"
   },
   "devDependencies": {
     "@gpa-lab/eslint-config": "^1.4.1",
