@@ -1,13 +1,8 @@
-.section {
-  border: 1px solid #e4e5e6;
-  border-radius: 5px;
-  padding: 1rem;
-
-  &-container {
-    display: grid;
-    gap: 1rem;
-    grid-template-columns: 1fr 1fr;
-  }
+.section-container {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr 1fr;
+  margin: 1rem;
 }
 
 .select {

@@ -2,7 +2,7 @@ import React, { Fragment } from 'react';
 
 import GutenbergEditor from './GutenbergEditor';
 import GutenbergOutput from './GutenbergOutput';
-import Panel from '../components/Panel/Panel';
+import Panel from '../../components/Panel/Panel';
 
 const Gutenberg = () => (
   <Fragment>
