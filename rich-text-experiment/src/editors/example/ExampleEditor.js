@@ -6,7 +6,7 @@ const ExampleEditor = ( { content, handler } ) => (
     <textarea
       value={ content }
       onChange={ handler }
-      style={ { minHeight: '200px', padding: '0.5rem', width: 'calc(100% - 1rem)' } }
+      style={ { minHeight: '200px', padding: '0.5rem', width: '100%' } }
     />
   </div>
 );
