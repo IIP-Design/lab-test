@@ -5,6 +5,7 @@ import Header from '../Header/Header';
 /** IMPORT YOUR COMPONENT BELOW */
 import Gutenberg from '../../editors/gutenberg/Gutenberg';
 import Example from '../../editors/example/Example';
+import ReactDraftWysiwyg from '../../editors/react-draft-wysiwyg/ReactDraftWysiwyg';
 import Slate from '../../editors/slate/Slate';
 
 import style from './App.module.scss';
@@ -20,6 +21,7 @@ const App = () => {
   const options = [
     { val: 'example', label: 'Example' },
     { val: 'gutenberg', label: 'Gutenberg' },
+    { val: 'react-draft-wysiwyg', label: 'React Draft WYSIWYG' },
     { val: 'slate', label: 'Slate' },
   ];
 
@@ -50,6 +52,10 @@ const App = () => {
 
           { selected === 'gutenberg' && (
             <Gutenberg />
+          ) }
+
+          { selected === 'react-draft-wysiwyg' && (
+            <ReactDraftWysiwyg />
           ) }
 
           { selected === 'slate' && (
