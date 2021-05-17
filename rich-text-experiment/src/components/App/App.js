@@ -5,6 +5,7 @@ import Header from '../Header/Header';
 /** IMPORT YOUR COMPONENT BELOW */
 import Gutenberg from '../../editors/gutenberg/Gutenberg';
 import Example from '../../editors/example/Example';
+import CKEClassic from '../../editors/cke-classic/CKEClassic';
 import ReactDraftWysiwyg from '../../editors/react-draft-wysiwyg/ReactDraftWysiwyg';
 import Slate from '../../editors/slate/Slate';
 
@@ -21,6 +22,7 @@ const App = () => {
   const options = [
     { val: 'example', label: 'Example' },
     { val: 'gutenberg', label: 'Gutenberg' },
+    { val: 'cke-classic', label: 'CKEditor 5 Classic' },
     { val: 'react-draft-wysiwyg', label: 'React Draft WYSIWYG' },
     { val: 'slate', label: 'Slate' },
   ];
@@ -52,6 +54,10 @@ const App = () => {
 
           { selected === 'gutenberg' && (
             <Gutenberg />
+          ) }
+
+          { selected === 'cke-classic' && (
+            <CKEClassic />
           ) }
 
           { selected === 'react-draft-wysiwyg' && (
