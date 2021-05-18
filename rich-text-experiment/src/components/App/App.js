@@ -5,6 +5,7 @@ import Header from '../Header/Header';
 /** IMPORT YOUR COMPONENT BELOW */
 import Gutenberg from '../../editors/gutenberg/Gutenberg';
 import Example from '../../editors/example/Example';
+import Slate from '../../editors/slate/Slate';
 
 import style from './App.module.scss';
 
@@ -19,6 +20,7 @@ const App = () => {
   const options = [
     { val: 'example', label: 'Example' },
     { val: 'gutenberg', label: 'Gutenberg' },
+    { val: 'slate', label: 'Slate' },
   ];
 
   return (
@@ -48,6 +50,10 @@ const App = () => {
 
           { selected === 'gutenberg' && (
             <Gutenberg />
+          ) }
+
+          { selected === 'slate' && (
+            <Slate />
           ) }
         </div>
       </main>
