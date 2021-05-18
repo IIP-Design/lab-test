@@ -8,6 +8,7 @@ import Example from '../../editors/example/Example';
 import CKEClassic from '../../editors/cke-classic/CKEClassic';
 import ReactDraftWysiwyg from '../../editors/react-draft-wysiwyg/ReactDraftWysiwyg';
 import Slate from '../../editors/slate/Slate';
+import TinyMce from '../../editors/tiny-mce/TinyMce';
 
 import style from './App.module.scss';
 
@@ -25,6 +26,7 @@ const App = () => {
     { val: 'cke-classic', label: 'CKEditor 5 Classic' },
     { val: 'react-draft-wysiwyg', label: 'React Draft WYSIWYG' },
     { val: 'slate', label: 'Slate' },
+    { val: 'tiny-mce', label: 'Tiny MCE' },
   ];
 
   return (
@@ -66,6 +68,10 @@ const App = () => {
 
           { selected === 'slate' && (
             <Slate />
+          ) }
+
+          { selected === 'tiny-mce' && (
+            <TinyMce />
           ) }
         </div>
       </main>
