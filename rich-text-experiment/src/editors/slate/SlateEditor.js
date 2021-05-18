@@ -1,7 +1,9 @@
-import React, { useEffect, useMemo } from 'react';
+import React, { useMemo, useCallback } from 'react';
 import { createEditor } from 'slate';
 import propTypes from 'prop-types';
 import { Slate, Editable, withReact } from 'slate-react';
+
+import EditableArea from './components/EditableArea';
 
 const SlateEditor = ( { content, handler } ) => {
   const editor = useMemo( () => withReact( createEditor() ), [] );
@@ -13,7 +15,9 @@ const SlateEditor = ( { content, handler } ) => {
         value={ content }
         onChange={ newValue => handler( newValue ) }
       >
-        <Editable />
+        <EditableArea
+          editor={ editor }
+        />
       </Slate>
     </div>
   );
