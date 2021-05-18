@@ -6,7 +6,7 @@ import Panel from '../../components/Panel/Panel';
 
 const TinyMce = () => {
   // State managed at this level to facilitate simultaneously demonstrating input/output.
-  const [content, setContent] = useState( 'Replace me with your rich text editor.' );
+  const [content, setContent] = useState( 'React Tiny MCE' );
 
   const handleInput = newValue => {
     setContent( newValue );
