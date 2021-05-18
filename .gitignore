@@ -1,4 +1,5 @@
 # Build Artifacts
+.cache
 .parcel-cache/
 dist/
 
