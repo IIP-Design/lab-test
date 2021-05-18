@@ -6,10 +6,10 @@ import Panel from '../../components/Panel/Panel';
 
 const Gutenberg = () => (
   <Fragment>
-    <Panel title="Editor">
+    <Panel title="Editor" style={ { gridArea: 'editor' } }>
       <GutenbergEditor />
     </Panel>
-    <Panel title="Output">
+    <Panel title="Output" style={ { gridArea: 'output' } }>
       <GutenbergOutput />
     </Panel>
   </Fragment>

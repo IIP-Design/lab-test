@@ -1,0 +1,7 @@
+.container {
+  align-self: start;
+
+  > * {
+    margin: 0.5rem 0;
+  }
+}

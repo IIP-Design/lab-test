@@ -1,8 +1,10 @@
 import React, { Fragment, useState } from 'react';
 
-import SlateEditor from './SlateEditor';
-import SlateOutput from './SlateOutput';
+import Notes from '../../components/Notes/Notes';
 import Panel from '../../components/Panel/Panel';
+import SlateEditor from './SlateEditor';
+import SlateNotes from './SlateNotes.mdx';
+import SlateOutput from './SlateOutput';
 
 const Slate = () => {
   // State managed at this level to facilitate simultaneously demonstrating input/output.
@@ -15,12 +17,15 @@ const Slate = () => {
 
   return (
     <Fragment>
-      <Panel title="Editor">
+      <Panel title="Editor" style={ { gridArea: 'editor' } }>
         <SlateEditor content={ content } handler={ setContent } />
       </Panel>
-      <Panel title="Output">
+      <Panel title="Output" style={ { gridArea: 'output' } }>
         <SlateOutput content={ content } />
       </Panel>
+      <Notes>
+        <SlateNotes />
+      </Notes>
     </Fragment>
   );
 };

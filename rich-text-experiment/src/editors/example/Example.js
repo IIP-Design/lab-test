@@ -16,10 +16,10 @@ const Example = () => {
 
   return (
     <Fragment>
-      <Panel title="Editor">
+      <Panel title="Editor" style={ { gridArea: 'editor' } }>
         <ExampleEditor content={ content } handler={ handleInput } />
       </Panel>
-      <Panel title="Output">
+      <Panel title="Output" style={ { gridArea: 'output' } }>
         <ExampleOutput content={ content } />
       </Panel>
     </Fragment>

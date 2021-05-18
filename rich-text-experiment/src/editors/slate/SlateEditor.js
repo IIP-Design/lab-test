@@ -1,7 +1,7 @@
-import React, { useMemo, useCallback } from 'react';
+import React, { useMemo } from 'react';
 import { createEditor } from 'slate';
 import propTypes from 'prop-types';
-import { Slate, Editable, withReact } from 'slate-react';
+import { Slate, withReact } from 'slate-react';
 
 import EditableArea from './components/EditableArea';
 

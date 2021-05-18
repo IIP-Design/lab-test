@@ -32,8 +32,12 @@ code {
 .section-container {
   display: grid;
   gap: 1rem;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
   margin: 1rem;
+  grid-template-areas:
+    'editor editor output output'
+    'notes notes notes notes';
   width: 100%;
 }
 
