@@ -9,10 +9,14 @@ export const config = {
   },
   language: 'en',
   image: {
+    styles: [
+      'alignLeft', 'alignCenter', 'alignRight',
+    ],
     toolbar: [
       'imageTextAlternative',
-      'imageStyle:full',
-      'imageStyle:side',
+      'imageStyle:alignLeft',
+      'imageStyle:alignCenter',
+      'imageStyle:alignRight',
     ],
   },
   heading: {
