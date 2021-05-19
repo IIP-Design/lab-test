@@ -20,8 +20,7 @@ const TinyMce = () => {
           <li>
             <p><strong>What formatting options (ex. headings, lists, bold, italics) are available out of the box?</strong></p>
             <p>Here is a list of toolbar  defaults: <code>undo, redo, formatselect, bold, italic, backcolor, alignleft, aligncenter, alignright, alignjustify, bullist, numlist, outdent, indent, removeformat, help</code>.</p>
-            <p>These defaults are made available by this array of plugins: <code>[
-             'advlist autolink lists link image charmap print preview anchor', 'searchreplace visualblocks code fullscreen', 'insertdatetime media table paste code help wordcount']</code>.</p>
+            <p>These defaults are made available by this array of plugins: <code>['advlist autolink lists link image charmap print preview anchor', 'searchreplace visualblocks code fullscreen', 'insertdatetime media table paste code help wordcount']</code>.</p>
             <p>A full list of formatting options and documentation is quite extensive and can be found on the <a href="https://www.tiny.cloud/docs/configure/content-formatting/">content formats page</a>.</p>
           </li>
           <li>
