@@ -2,9 +2,14 @@ import { Editor, Transforms } from 'slate';
 
 const setTypes = ( e, editor, type ) => {
   e.preventDefault();
+
+  const [match] = Editor.nodes( editor, {
+    match: n => n.type === type,
+  } );
+
   Transforms.setNodes(
     editor,
-    { type },
+    { type: match ? 'paragraph' : type },
     { match: n => Editor.isBlock( editor, n ) },
   );
 };
