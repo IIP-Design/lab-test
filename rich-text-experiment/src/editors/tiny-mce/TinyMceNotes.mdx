@@ -1,0 +1,47 @@
+### What formatting options (ex. headings, lists, bold, italics) are available out of the box?
+
+Here is a list of toolbar  defaults: `undo, redo, formatselect, bold, italic, backcolor, alignleft, aligncenter, alignright, alignjustify, bullist, numlist, outdent, indent, removeformat, help`.
+
+These defaults are made available by this array of plugins: `['advlist autolink lists link image charmap print preview anchor', 'searchreplace visualblocks code fullscreen', 'insertdatetime media table paste code help wordcount']`.
+
+A full list of formatting options and documentation is quite extensive and can be found on the [content formats page](https://www.tiny.cloud/docs/configure/content-formatting/).
+
+### Does it support content blocks? If so, how does one configure them?
+
+They have documented techniques for [creating customized toolbar buttons](https://www.tiny.cloud/docs/demo/custom-toolbar-button/) and [menu items](https://www.tiny.cloud/docs/demo/custom-menu-item/). While this isn't the same as content block, it does provide some flexibility.
+
+### How is data stored/saved?
+
+Stores data as a string of HTML content, which would work well with the `DocumentConversionFormat` used on the Commons server.
+
+### Can we manipulate the editor styling?
+
+Yes, but it's not great for maintainability. A traditional CSS module or stylesheet doesn't work since the Tiny MCE text editor is an `iframe`.
+
+Their prescribed method is to to use a configuration object that gets passed to the component's `init` prop. The configuration object has a `content_style` property that takes a string of CSS style rules that will be added to the `head` tag of the text editor's `iframe`.
+
+This method is awkward, but it may not be a big deal if the styling doesn't change often.
+
+### Is it extensible (can we add custom styles, toolbar buttons, blocks, etc.)?
+
+It's relatively easy to customize with a configuration object that gets passed to the component's `init` prop.
+
+See comment above about implementing customized toolbar buttons and menu items.
+
+### How does it handle preformatted text?
+
+It handles preformatted text pretty well.
+
+### Miscellaneous
+
+It comes with a nice help button on the toolbar that opens a modal with keyboard shortcuts, etc.
+
+There are quite a few keyboard shortcuts, but they didn't seem that intuitive to me. And interactive content within the text editor's `iframe` wasn't accessible. Though, I could be missing something here.
+
+Pasting the URL of an image displays the image in the text editor, which is nice, but the `img` tag in the output is missing an `alt` attribute.
+
+Overall, Tiny MCE is full featured and wasn't too difficult to setup. It's professional developed and has documentation that's generally clear.
+
+There's a nagging alert to set up an account with its cloud services that needs to be manually dismissed before using the editor. I'm sure there is a way to make it not appear without using their cloud services, but I missed that.
+
+It requires attribution according to its [LGPL 2.1 license](https://github.com/tinymce/tinymce/blob/develop/LICENSE.TXT#L278). Their recommendation is to use the default "Powered by Tiny" text in the lower right corner of the text editor.

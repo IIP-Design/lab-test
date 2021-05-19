@@ -1,0 +1,52 @@
+
+### What formatting options (ex. headings, lists, bold, italics) are available out of the box?
+
+Here is the `options` array with the defaults: `['inline', 'blockType', 'fontSize', 'fontFamily', 'list', 'textAlign', 'colorPicker', 'link', 'embedded', 'emoji', 'image', 'remove', 'history']`.
+
+The `inline` item refers to bold, italics, and underline.
+
+The `blockType` item refers to a dropdown with Normal, H1 to H6, and Blockquote, and the headings can be customized to display only H1 to H3.
+
+The `list` item refers to bulleted and numbered lists as well as indent and outdent.
+
+### Does it support content blocks? If so, how does one configure them?
+
+No
+
+### How is data stored/saved?
+
+Stores data as a string of HTML content or as JSON. A string of HTML would work well with the `DocumentConversionFormat` used on the Commons server. According to the package docs, the JSON object is useful for populating the editor state on component mount/remount.
+
+### Can we manipulate the editor styling?
+
+Yes, via a stylesheet. The editor can be assigned a custom `class` value that can be used to scope styles to control the appearance of the content. I was able to get it to match the UXPin mockup with little difficulty.
+
+### Is it extensible (can we add custom styles, toolbar buttons, blocks, etc.)?
+
+It's easy to customize which formatting options appear in the toolbar. The `Editor` component has a `toolbar` prop that handles this. Likewise, it has a `localization` prop that allows for customization of various labels, e.g., changing the H1 label to Heading 1.
+
+There doesn't appear to be a way to customize the toolbar icons, but there does appear to be a way to add a new formatting option to the toolbar or replace a default option with a custom one.
+
+### How does it handle preformatted text?
+
+It accepts preformatted text, i.e., copied from Word doc, but it inserts `&lt;br&gt;` tags in places. Copied links come over well, but lists come over as paragraphs with a bullet inside of the paragraph. So the markup isn't accurate for lists. Existing formatting is retained by adding inline styles to a paragraph tag wrapper.
+
+There is an option to strip formatting from pasted text, which works well, but of course, the user would have to reformat all of the text.
+
+### Miscellaneous
+
+I couldn't get this package to work in this `lab-test` site; I commented out the implementation in these components. However, I was able to get it to work in this [CodeSandbox](https://codesandbox.io/s/react-draft-wysiwyg-4bfwu?file=/src/App.js).
+
+The `remove` option never worked for me.
+
+The `image` upload never worked, but an `image` URL seemed to worked fine. However, the image was wrapped in a `div` in the output.
+
+The `embed` option didn't work for Twitter embeds but seemed to handle YouTube embed URLs just fine.
+
+Deleting content can be somewhat particular. Deleting after using <kbd>command-a</kbd> to select everything worked fine, but manually selecting everything didn't work consistently. Double-clicking and deleting a selected word seemed to work okay
+
+The toolbar options can't be accessed with the keyboard, and the markup uses `aria` attributes strangely.
+
+While this package has a `blockquote` option, there doesn't appear to be an option for an inline `quote`, which is one of the options in the mockup and would wrap inline text in a `q` tag. It may be possible to add it as a custom toolbar option. However, I think users would probably just handle quotes by manually entering a quote like "some quote" rather than highlighting some text and selecting a `quote` option from the toolbar.
+
+The package repo doesn't appear to be as actively maintained as it was in the past (over 400 issues). Based on a comment in an issue posted on October 20, 2020, "[Is this repository maintained?](https://github.com/jpuri/react-draft-wysiwyg/issues/1039)", the maintainer seems to have moved on to [Nib](https://nibedit.com/), which is another React-based text editor built on Prosemirror.

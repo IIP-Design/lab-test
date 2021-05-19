@@ -1,0 +1,53 @@
+### What formatting options (ex. headings, lists, bold, italics) are available out of the box?
+
+Here is an array with the defaults: `["selectAll", "undo", "redo", "bold", "italic", "blockQuote", "imageTextAlternative", "link", "ckfinder", "uploadImage", "imageUpload", "heading", "imageStyle:full", "imageStyle:side", "indent", "outdent", "numberedList", "bulletedList", "mediaEmbed", "insertTable", "tableColumn", "tableRow", "mergeTableCells"]`.
+
+A full list of options and documentation can be found on the [features page](https://ckeditor.com/docs/ckeditor5/latest/features/index.html).
+
+### Does it support content blocks? If so, how does one configure them?
+
+CKEditor has several different types of editors: Classic, Inline, Balloon block, Balloon, Document, or Custom. They have an [interactive examples page](https://ckeditor.com/docs/ckeditor5/latest/examples/index.html) that demonstrates each of these editors.
+
+I implemented the Classic editor above since it's the most similar to our mockups, but the Balloon block editor seems like it could meet our needs for content blocks.
+
+Also, they have a couple tutorials on [implementing a block widget](https://ckeditor.com/docs/ckeditor5/latest/framework/guides/tutorials/implementing-a-block-widget.html) and [using a React component in a widget](https://ckeditor.com/docs/ckeditor5/latest/framework/guides/tutorials/using-react-in-a-widget.html) that seem like they'd be useful for developing content blocks.
+  
+### How is data stored/saved?
+
+Stores data as a string of HTML content, which would work well with the `DocumentConversionFormat` used on the Commons server.
+  
+### Can we manipulate the editor styling?
+
+Yes, via a stylesheet.
+
+### Is it extensible (can we add custom styles, toolbar buttons, blocks, etc.)?
+
+It's relatively easy to customize which formatting options appear in the toolbar via its `config` prop.
+
+Alternatively, they provide an online builder to create custom builds. Basically, you select various formatting options and then export a `ckeditor5` folder.
+
+Place the custom minified build file somewhere in the app and import it in our `TextEditor` component and use it as the `CKEditor` component's `editor` prop.
+
+Then use the configuration object in the provided `sample/index.html` file as the `config` prop.
+
+This is the approach that I used for the classic editor; it's quick and dirty for this test. However, a better workflow might be to set up the provided custom build directory as a gpa-lab npm package that can be imported into a project as a dependency.
+
+There also appears to be a way to replace their toolbar icons with our own. The method they suggest involves [using Webpack's `NormalModuleReplacementPlugin`](https://ckeditor.com/docs/ckeditor5/latest/builds/guides/faq.html#how-to-customize-the-ckeditor-5-icons).
+
+They document a way to [create custom plugins](https://ckeditor.com/docs/ckeditor5/latest/framework/guides/creating-simple-plugin.html) that appears like it could meet our needs
+
+See comment above about implementing block widget and using React component in a block widget.
+
+### How does it handle preformatted text?
+
+It handles preformatted text very well. They provide a sample Word document with a heading, unordered list, text, and a table, and brought over all of the formatting correctly. I tried it with a link, and it handled that as well.
+
+They have separate plugins for pasting from Word, Google Docs, and plain text, but pasting from Word worked for me by default.
+
+### Miscellaneous
+
+[Supports entering text with markdown](https://ckeditor.com/docs/ckeditor5/latest/features/autoformat.html#block-formatting) by default.
+
+Has pretty good [keyboard support](https://ckeditor.com/docs/ckeditor5/latest/features/keyboard-support.html).
+
+Overall, CKEditor is quite powerful and complex to fully grasp and set up. It seems to be professionally developed and maintained actively and has documentation that's fairly extensive and generally clear. I think this is because they sell commerical licenses for their editor in addition open source, which provides them with a source of revenue to support their work.
