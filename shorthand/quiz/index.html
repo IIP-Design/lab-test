@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shorthand Quiz Example</title>
+
+  <link rel="stylesheet" type="text/css" href="./style.css">
+</head>
+<body>
+  <form data-correct="washington" id="capital" class="gpalab-group">
+    What is the capital of the United States?
+
+    <label for="new-york">
+      <input id="new-york" name="capital" value="new-york" type="radio">
+      New York
+    </label>
+
+    <label for="washington">
+      <input id="washington" name="capital" value="washington" type="radio">
+      Washington, DC
+    </label>
+
+    <label for="san-fran">
+      <input id="san-fran" name="capital" value="san-fran" type="radio">
+      San Francisco
+    </label>
+
+    <label for="chicago">
+      <input id="chicago" name="capital" value="chicago" type="radio">
+      Chicago
+    </label>
+  
+    <button class="gpalab-btn" type="submit">Check Answer</button>
+
+    <p class="gpalab-result" id="capital-result"></p>
+  </form>
+
+  <form data-correct="ethiopia" id="france" class="gpalab-group">
+    Which country was NOT previously occupied by France?
+
+    <label for="ethiopia">
+      <input id="ethiopia" name="france" value="ethiopia" type="radio">
+      Ethiopia
+    </label>
+
+    <label for="lebanon">
+      <input id="lebanon" name="france" value="lebanon" type="radio">
+      Lebanon
+    </label>
+
+    <label for="morocco">
+      <input id="morocco" name="france" value="morocco" type="radio">
+      Morocco
+    </label>
+
+    <label for="thailand">
+      <input id="thailand" name="france" value="thailand" type="radio">
+      Thailand
+    </label>
+  
+    <button class="gpalab-btn" name="france" type="submit">Check Answer</button>
+
+    <p class="gpalab-result" id="france-result"></p>
+  </form>
+
+  <form data-correct="suriname" id="dutch" class="gpalab-group">
+    Which South American country speaks Dutch?
+
+    <label for="brazil">
+      <input id="brazil" name="dutch" value="brazil" type="radio">
+      Brazil
+    </label>
+
+    <label for="colombia">
+      <input id="colombia" name="dutch" value="colombia" type="radio">
+      Colombia
+    </label>
+
+    <label for="argentina">
+      <input id="argentina" name="dutch" value="argentina" type="radio">
+      Argentina
+    </label>
+
+    <label for="suriname">
+      <input id="suriname" name="dutch" value="suriname" type="radio">
+      Suriname
+    </label>
+  
+    <button class="gpalab-btn" name="dutch" type="submit">Check Answer</button>
+
+    <p class="gpalab-result" id="dutch-result"></p>
+  </form>
+
+  <form data-correct="all" id="australia" class="gpalab-group">
+    Which animal is endemic to Australia?
+
+    <label for="kangaroo">
+      <input id="kangaroo" name="australia" value="kangaroo" type="radio">
+      Kangaroo
+    </label>
+
+    <label for="wallaby">
+      <input id="wallaby" name="australia" value="wallaby" type="radio">
+      Wallaby
+    </label>
+
+    <label for="emu">
+      <input id="emu" name="australia" value="emu" type="radio">
+      Emu
+    </label>
+
+    <label for="all">
+      <input id="all" name="australia" value="all" type="radio">
+      All of the above
+    </label>
+  
+    <button class="gpalab-btn" name="australia" type="submit">Check Answer</button>
+
+    <p class="gpalab-result" id="australia-result"></p>
+  </form>
+
+  <script src="./quiz.js" type="text/javascript"></script>
+</body>
+</html>

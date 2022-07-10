@@ -1,0 +1,9 @@
+.gpalab-btn {
+  align-self: flex-start;
+  margin-top: 1rem;
+}
+
+.gpalab-group {
+  display: flex;
+  flex-direction: column;
+}
