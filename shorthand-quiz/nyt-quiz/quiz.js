@@ -1,4 +1,9 @@
 
+
+  let count = 0; /** score of the user, starting at 0 **/
+  let current = 1; /** number of the current question **/
+  let total = 3; /** number of total questions UPDATE THIS!!! **/
+
 /**
 * Function: disableButton
 * Input: the IDs of four elements to be disabled.
@@ -7,11 +12,11 @@
 * Useage: to disable clickability of the four answer choices.
 **/
 
-function disableButton(id1, id2, id3, id4) {
-   document.getElementById(id1).disabled = true;
-   document.getElementById(id2).disabled = true;
-   document.getElementById(id3).disabled = true;
-   document.getElementById(id4).disabled = true;
+function disableButton(answerA, answerB, answerC, answerD) {
+   answerA.disabled = true;
+   answerB.disabled = true;
+   answerC.disabled = true;
+   answerD.disabled = true;
 }
 
 /**
@@ -28,17 +33,41 @@ function disableButton(id1, id2, id3, id4) {
 * explanation and score will be revealed to the user.
 **/
 
- function checkAnswer(inputID, rightID, captionID, scoreID) {
+ function checkAnswer(selected) {
+   var section = document.getElementById(current.toString());
+   var questions = section.getElementsByClassName('question');
+   var answers = section.getElementsByClassName('answer');
+   var explanations = section.getElementsByClassName('explanation');
 
-  if (inputID == rightID) {
-    rightAnswer(inputID);
-    counter(captionID, 1, scoreID);
+   var answerA = answers[0];
+   var answerB = answers[1];
+   var answerC = answers[2];
+   var answerD = answers[3];
+
+   var explanation = explanations[0];
+   var reveal = explanations[1];
+
+   if (answerA.value == "true") {
+     var correct = answerA;
+   } else if (answerB.value == "true") {
+     var correct = answerB;
+   } else if (answerC.value == "true") {
+     var correct = answerC;
+   } else {
+     var correct = answerD;
+   }
+
+  if (selected == correct) {
+    rightAnswer(selected);
+    counter(explanation, 1, reveal);
   } else {
-    wrongAnswer(inputID);
-    actualAnswer(rightID);
-    counter(captionID, 0, scoreID);
+    wrongAnswer(selected);
+    actualAnswer(correct);
+    counter(explanation, 0, reveal);
   }
+   disableButton(answerA, answerB, answerC, answerD);
 }
+
 
 /**
 * Function: wrongAnswer
@@ -48,8 +77,8 @@ function disableButton(id1, id2, id3, id4) {
 * the element to the red wrong answer display.
 **/
 
-function wrongAnswer(id) {
-   var element = document.getElementById(id);
+function wrongAnswer(element) {
+   //var element = document.getElementById(id);
    element.style.color='white';
    element.style.backgroundColor='rgba(220,20,60, 0.4)';
 }
@@ -62,8 +91,8 @@ function wrongAnswer(id) {
 * the element of the correct answer to green.
 **/
 
-function actualAnswer(id) {
-  var element = document.getElementById(id);
+function actualAnswer(element) {
+  //var element = document.getElementById(id);
    element.style.color='rgb(34,139,34)';
    element.style.backgroundColor='lightgrey';
 }
@@ -76,8 +105,8 @@ function actualAnswer(id) {
 * the element the user selected to green.
 **/
 
-function rightAnswer(id) {
-  var element = document.getElementById(id);
+function rightAnswer(element) {
+  //var element = document.getElementById(id);
    element.style.fontWeight='bold';
    element.style.color='white';
    element.style.backgroundColor='rgba(34,139,34, 0.4)';
@@ -92,13 +121,14 @@ function rightAnswer(id) {
 * appropriately, and the explanation is revealed.
 **/
 
-  let count = 0; /** score of the user, starting at 0 **/
-  let total = 4; /** total number of questions, MUST BE UPDATED **/
-function counter(captionID, amount, scoreID) {
+
+function counter(explanation, amount, reveal) {
   count+=amount;
-  document.getElementById(captionID).style.setProperty('display', 'inline-block', 'important');
-  document.getElementById(scoreID).style.setProperty('display', 'inline-block', 'important');
-  document.getElementById(scoreID).innerHTML = "You have answered " + count + " out of " + total + " questions correctly.";
+  current++;
+
+  explanation.style.setProperty('display', 'inline-block', 'important');
+  reveal.style.setProperty('display', 'inline-block', 'important');
+  reveal.innerHTML = "You have answered " + count + " out of " + total + " questions correctly.";
 
 }
 
