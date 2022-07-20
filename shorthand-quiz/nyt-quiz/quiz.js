@@ -2,19 +2,12 @@ let count = 0; // score of the user, starting at 0
 const current = 1; // number of the current question
 const total = 8; // number of total questions UPDATE THIS!!!
 
-
 /**
- * Disable the four answer choices when.
- * @param {HTMLElement} answerA The first answer.
- * @param {HTMLElement} answerB The second answer.
- * @param {HTMLElement} answerC The third answer.
- * @param {HTMLElement} answerD The fourth answer.
+ * Disable the four answer choices when a user makes a selection.
+ * @param {HTMLElement[]} answers The list of answer elements.
  */
-function disableButton( answerA, answerB, answerC, answerD ) {
-  answerA.disabled = true;
-  answerB.disabled = true;
-  answerC.disabled = true;
-  answerD.disabled = true;
+function disableButton( answers ) {
+  answers.forEach( answer => { answer.disabled = true; } );
 }
 
 /**
@@ -51,45 +44,50 @@ function counter( explanation, amount, reveal ) {
 }
 
 /**
+ * Checks whether the chosen answer is correct.
+ * @param {HTMLElement} element The selected answer.
+ * @returns {boolean} True if the answer is correct.
+ */
+function isCorrect( element ) {
+  const { correct } = element.dataset;
+
+  return correct === 'true';
+}
+
+/**
+ * Checks whether the chosen answer is correct.
+ * @param {HTMLElement[]} elements A list of HTML elements.
+ * @returns {HTMLElement} The correct answer.
+ */
+function getCorrectAnswer( elements ) {
+  const correct = elements.filter( element => isCorrect( element ) );
+
+  return correct[0]; // We assume there is only one correct answer in the array.
+}
+
+/**
  * Checks whether the chosen answer is correct and updates the page appropriately.
  * @param {HTMLElement} selected The answer clicked by the user.
  */
 function checkAnswer( selected ) {
   const section = selected.parentElement;
-  const questions = section.getElementsByClassName( 'question' );
-  const answers = section.getElementsByClassName( 'answer' );
+  // Spread the returned HTML elements into an array so we can iterate over them.
+  const [...answers] = section.getElementsByClassName( 'answer' );
   const explanations = section.getElementsByClassName( 'explanation' );
-
-  let correct;
-
-  const answerA = answers[0];
-  const answerB = answers[1];
-  const answerC = answers[2];
-  const answerD = answers[3];
 
   const explanation = explanations[0];
   const reveal = explanations[1];
 
-  if ( answerA.value === 'true' ) {
-    correct = answerA;
-  } else if ( answerB.value === 'true' ) {
-    correct = answerB;
-  } else if ( answerC.value === 'true' ) {
-    correct = answerC;
-  } else {
-    correct = answerD;
-  }
-
-  if ( selected === correct ) {
+  if ( isCorrect( selected ) ) {
     rightAnswer( selected );
     counter( explanation, 1, reveal );
   } else {
     wrongAnswer( selected );
-    rightAnswer( correct );
+    rightAnswer( getCorrectAnswer( answers ) );
     counter( explanation, 0, reveal );
   }
 
-  disableButton( answerA, answerB, answerC, answerD );
+  disableButton( answers );
 }
 
 /**
