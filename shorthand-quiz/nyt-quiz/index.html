@@ -8,8 +8,7 @@
     <link rel="stylesheet" type="text/css" href="./style.css" />
   </head>
   <body>
-    <div id="1">
-      <p class="question"></p>
+    <article class="question-container" id="1">
       <p class="question">What is the capitol of the United States?</p>
       <button class="answer" onclick="checkAnswer(this)" data-correct="false">New York</button>
       <button class="answer" onclick="checkAnswer(this)" data-correct="true">Washington DC</button>
@@ -17,10 +16,9 @@
       <button class="answer" onclick="checkAnswer(this)" data-correct="false">Seattle</button>
       <p class="explanation">The correct answer is Washington DC.</p>
       <p class="explanation"></p>
-    </div>
+    </article>
 
-    <div id="2">
-      <p class="question"></p>
+    <article class="question-container" id="2">
       <p class="question">Which country was NOT previously occupied by France?</p>
       <button class="answer" onclick="checkAnswer(this)" data-correct="true">Ethiopia</button>
       <button class="answer" onclick="checkAnswer(this)" data-correct="false">Lebanon</button>
@@ -28,9 +26,9 @@
       <button class="answer" onclick="checkAnswer(this)" data-correct="false">Thailand</button>
       <p class="explanation">The correct answer is Ethiopia.</p>
       <p class="explanation"></p>
-    </div>
+    </article>
 
-    <div id="3">
+    <article class="question-container" id="3">
       <p class="question">Which South American country speaks Dutch?</p>
       <button class="answer" onclick="checkAnswer(this)" data-correct="false">Brazil</button>
       <button class="answer" onclick="checkAnswer(this)" data-correct="false">Colombia</button>
@@ -38,7 +36,7 @@
       <button class="answer" onclick="checkAnswer(this)" data-correct="true">Suriname</button>
       <p class="explanation">The correct answer is Suriname.</p>
       <p class="explanation"></p>
-    </div>
+    </article>
 
     <p class="answer">Test end slide:</p>
     <input id="final" type="button" class="end" onclick="grader(this.id,'score');" value="Click here to reveal your final score!">

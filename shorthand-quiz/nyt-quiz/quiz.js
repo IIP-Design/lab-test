@@ -1,6 +1,7 @@
-let count = 0; // score of the user, starting at 0
-const current = 1; // number of the current question
-const total = 8; // number of total questions UPDATE THIS!!!
+let score = 0; // score of the user, starting at 0
+
+// Dynamically calculate to number of questions on the page.
+const total = document.querySelectorAll( '.question-container' ).length;
 
 /**
  * Disable the four answer choices when a user makes a selection.
@@ -42,7 +43,7 @@ function rightAnswer( element ) {
  * @param {HTMLElement} reveal The element that displays the user's progress.'
  */
 function counter( explanation, amount, reveal ) {
-  count += amount;
+  score += amount;
 
   explanation.style.setProperty( 'display', 'inline-block', 'important' );
   /**
@@ -105,20 +106,21 @@ function checkAnswer( selected ) {
  */
 function grader( finalID, revealID ) {
   // the below is calculated from the global variables
-  const percent = ( count / total );
+  const percent = ( score / total );
 
-  const message = `You finished the quiz, your answered ${count} out of ${total} questions correctly! <br>`;
+  let message = `You finished the quiz, your answered ${score} out of ${total} questions correctly! <br>`;
 
   if ( percent <= 0.33 ) {
     // modify string for a lower third percentage score
-    document.getElementById( revealID ).innerHTML = `${message}You're in the bottom third.`;
+    message = `${message}You're in the bottom third.`;
   } else if ( percent <= 0.66 ) {
     // modify string for a middle third percentage score
-    document.getElementById( revealID ).innerHTML = `${message}You're in the middle third.`;
+    message = `${message}You're in the middle third.`;
   } else {
     // modify string for an upper third percentage score
-    document.getElementById( revealID ).innerHTML = `${message}You're a diplomat.`;
+    message = `${message}You're a diplomat.`;
   }
 
+  document.getElementById( revealID ).innerHTML = message;
   document.getElementById( finalID ).disabled = true;
 }
