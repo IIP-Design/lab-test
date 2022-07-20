@@ -1,8 +1,8 @@
 
-
   let count = 0; /** score of the user, starting at 0 **/
   let current = 1; /** number of the current question **/
-  let total = 3; /** number of total questions UPDATE THIS!!! **/
+  let total = 8; /** number of total questions UPDATE THIS!!! **/
+
 
 /**
 * Function: disableButton
@@ -34,10 +34,16 @@ function disableButton(answerA, answerB, answerC, answerD) {
 **/
 
  function checkAnswer(selected) {
-   var section = document.getElementById(current.toString());
+   var section = selected.parentElement;
    var questions = section.getElementsByClassName('question');
    var answers = section.getElementsByClassName('answer');
    var explanations = section.getElementsByClassName('explanation');
+
+   console.log(selected.parentElement);
+   console.log(questions);
+   console.log(answers);
+   console.log(explanations);
+
 
    var answerA = answers[0];
    var answerB = answers[1];
@@ -124,11 +130,12 @@ function rightAnswer(element) {
 
 function counter(explanation, amount, reveal) {
   count+=amount;
-  current++;
 
   explanation.style.setProperty('display', 'inline-block', 'important');
+  /**
   reveal.style.setProperty('display', 'inline-block', 'important');
   reveal.innerHTML = "You have answered " + count + " out of " + total + " questions correctly.";
+  **/
 
 }
 
