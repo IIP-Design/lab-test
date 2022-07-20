@@ -32,6 +32,7 @@ function wrongAnswer( element ) {
  * @param {HTMLElement} element The HTML element that should be altered.
  */
 function rightAnswer( element ) {
+  element.style.fontWeight = 'bold';
   element.classList.add( 'correct' );
 }
 
@@ -107,20 +108,19 @@ function grader( finalID, revealID ) {
   // the below is calculated from the global variables
   const percent = ( score / total );
 
-  const baseMessage = `You finished the quiz, your answered ${score} out of ${total} questions correctly! <br>`;
-  let finalMessage = '';
+  let message = `You finished the quiz, your answered ${score} out of ${total} questions correctly! <br>`;
 
   if ( percent <= 0.33 ) {
     // modify string for a lower third percentage score
-    finalMessage = `${baseMessage}You're in the bottom third.`;
+    message = `${message}You're in the bottom third.`;
   } else if ( percent <= 0.66 ) {
     // modify string for a middle third percentage score
-    finalMessage = `${baseMessage}You're in the middle third.`;
+    message = `${message}You're in the middle third.`;
   } else {
     // modify string for an upper third percentage score
-    finalMessage = `${baseMessage}You're a diplomat.`;
+    message = `${message}You're a diplomat.`;
   }
 
-  document.getElementById( revealID ).innerHTML = finalMessage;
+  document.getElementById( revealID ).innerHTML = message;
   document.getElementById( finalID ).disabled = true;
 }

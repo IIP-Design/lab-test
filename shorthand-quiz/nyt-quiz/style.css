@@ -34,14 +34,17 @@ input:disabled {
  * to explain the correct answer in the quiz.
  **/
 
-.explanation {
+.question,.explanation {
   font-family: Merriweather !important;
   font-size: 18px;
   text-align: inline-block;
   text-decoration: none !important;
-  display: none !important;
   margin-top: 5px;
   margin-bottom: 5px;
+}
+
+.explanation {
+  display: none !important;
   transition-duration: 0.4s;
 }
 
