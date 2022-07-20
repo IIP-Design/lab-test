@@ -1,13 +1,24 @@
 /** QUIZ  **/
 
+/* Set custom color variables*/
+:root {
+  --blueDark: #0a2240;
+  --blueMedium: #002d74;
+  --blueLight: #e1f3f8;
+  --blueLightest: #f0f8ff;
+  --red: #f9dede;
+  --green: #94bfa2;
+  --grey: #e4e5e6;
+}
+
 /** Input:
-These sections relate to the styling of the buttons used
-to control the selection of answers in the quiz.
-Input makes sure that the text breaks properly when a button
-has so much text it needs to wrap to the next line.
-When disabled, the button reverts to a light grey color
-with black font.
-**/
+ * These sections relate to the styling of the buttons used
+ * to control the selection of answers in the quiz.
+ * Input makes sure that the text breaks properly when a button
+ * has so much text it needs to wrap to the next line.
+ * When disabled, the button reverts to a light grey color
+ * with black font.
+ **/
 
 input {
   white-space: normal;
@@ -15,14 +26,13 @@ input {
 }
 
 input:disabled {
-  background-color: lightgrey;
-  color: black;
+  background-color: var(--grey);
 }
 
 /** Explanation:
-This section relates to the styling of the text that appears
-to explain the correct answer in the quiz.
-**/
+ * This section relates to the styling of the text that appears
+ * to explain the correct answer in the quiz.
+ **/
 
 .explanation {
   font-family: Merriweather !important;
@@ -36,19 +46,19 @@ to explain the correct answer in the quiz.
 }
 
 /** Answer:
-This section relates to the styling of the text that is
-initially displayed as the four answers a user might select.
-When a user hovers over an answer, the color of the text
-and the background both change.
-**/
+ * This section relates to the styling of the text that is
+ * initially displayed as the four answers a user might select.
+ * When a user hovers over an answer, the color of the text
+ * and the background both change.
+ **/
 
 .answer {
   font-family: Merriweather !important;
   font-size: 18px;
   text-align: left;
   text-decoration: none;
-  color: midnightblue;
-  background-color: aliceblue;
+  color: var(--blueDark);
+  background-color: var(--blueLightest);
   display: inline-block;
   border: none;
   padding: 20px 20px 20px 20px;
@@ -57,28 +67,36 @@ and the background both change.
   width: 100%;
 }
 
-.answer:hover {
-  color: #5b7c99 !important;
-  background-color: rgba(255,255,255,0.2);
+.answer:not(:disabled):hover {
+  color: var(--blueMedium) !important;
+  background-color: var(--blueLight);
+}
+
+.answer.correct {
+  background-color: var(--green);
+}
+
+.answer.incorrect {
+  background-color: var(--red);
 }
 
 /** End:
-This section relates to the styling of the text that is
-displayed at the end of the quiz, once a user has answered
-all the questions. When a user hovers over the final button,
-the background color and font color change, as seen previously.
-A user can click to display their final score, in which case
-the end button needs to disappear to make way for the final
-message.
-**/
+ * This section relates to the styling of the text that is
+ * displayed at the end of the quiz, once a user has answered
+ * all the questions. When a user hovers over the final button,
+ * the background color and font color change, as seen previously.
+ * A user can click to display their final score, in which case
+ * the end button needs to disappear to make way for the final
+ * message.
+ **/
 
 .end {
   font-family: Merriweather !important;
   font-size: 18px;
   text-align: center;
   text-decoration: none;
-  color: midnightblue;
-  background-color: aliceblue;
+  color: var(--blueDark);
+  background-color: var(--blueLightest);
   display: inline-block;
   border: none;
   padding: 20px 20px 20px 20px;
@@ -86,22 +104,24 @@ message.
   margin-bottom: 5px;
   width: 100%;
 }
+
 .end:hover {
-  background-color: rgba(255,255,255,0.2);
-  color: #5b7c99 !important;
+  color: var(--blueMedium) !important;
+  background-color: var(--blueLight);
 }
+
 .end:disabled {
   display: none !important;
 }
 
 /** End Card:
-This section relates to the styling of the text that is
-displayed at the end of the quiz, once a user has answered
-all the questions. The following sections allow for a flip-
-card animation to be displayed. The following sections were
-modified from a W3 Schools tutorial on creating a flip card
-in CSS.
-**/
+ * This section relates to the styling of the text that is
+ * displayed at the end of the quiz, once a user has answered
+ * all the questions. The following sections allow for a flip-
+ * card animation to be displayed. The following sections were
+ * modified from a W3 Schools tutorial on creating a flip card
+ * in CSS.
+ **/
 
 .end-card {
   font-family: Merriweather !important;
@@ -127,8 +147,15 @@ in CSS.
   transform: rotateY(180deg);
 }
 
-/* Position the front and back side */
-.end-card-front, .end-card-back {
+/* Styles shared by the front and back of the card */
+.end-card-front,
+.end-card-back {
+  font-family: Merriweather !important;
+  font-size: 18px;
+  text-align: center;
+  color: var(--blueDark);
+  background-color: var(--blueLightest);
+  border: none;
   position: absolute;
   width: 100%;
   height: 100%;
@@ -138,24 +165,10 @@ in CSS.
 
 /* Style the front side */
 .end-card-front {
-  font-family: Merriweather !important;
-  font-size: 18px;
-  text-align: center;
-  color: midnightblue;
-  background-color: aliceblue;
-  border: none;
   padding: 50px 0;
-  width: 100%;
 }
 
 /* Style the back side */
 .end-card-back {
-  font-family: Merriweather !important;
-  font-size: 18px;
-  text-align: center;
-  color: midnightblue;
-  background-color: aliceblue;
-  border: none;
-  width: 100%;
   transform: rotateY(180deg);
 }

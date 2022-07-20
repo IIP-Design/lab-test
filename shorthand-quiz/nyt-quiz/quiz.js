@@ -18,12 +18,9 @@ function disableButton( answerA, answerB, answerC, answerD ) {
 }
 
 /**
-* Function: wrongAnswer
-* Input: the ID of the answer the user selects.
-* Output: the answer is changed to reflect a wrong selection.
-* Useage: when a user selects the wrong answer, this changes
-* the element to the red wrong answer display.
-* */
+ * Change element styling to indicate it is an incorrect answer.
+ * @param {HTMLElement} element The HTML element that should be altered.
+ */
 function wrongAnswer( element ) {
   // var element = document.getElementById(id);
   element.style.color = 'white';
