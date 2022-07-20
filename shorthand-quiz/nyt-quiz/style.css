@@ -53,6 +53,7 @@ input:disabled {
  **/
 
 .answer {
+  cursor: pointer;
   font-family: Merriweather !important;
   font-size: 18px;
   text-align: left;
@@ -67,6 +68,10 @@ input:disabled {
   width: 100%;
 }
 
+.answer:disabled {
+  cursor: default;
+}
+
 .answer:not(:disabled):hover {
   color: var(--blueMedium) !important;
   background-color: var(--blueLight);
@@ -74,6 +79,7 @@ input:disabled {
 
 .answer.correct {
   background-color: var(--green);
+  font-weight: bold;
 }
 
 .answer.incorrect {
