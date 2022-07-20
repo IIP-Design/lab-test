@@ -5,9 +5,17 @@ const total = 8; // number of total questions UPDATE THIS!!!
 /**
  * Disable the four answer choices when a user makes a selection.
  * @param {HTMLElement[]} answers The list of answer elements.
+ * @param {HTMLElement} selected The answer chosen by the user.
  */
-function disableButton( answers ) {
-  answers.forEach( answer => { answer.disabled = true; } );
+function disableButton( answers, selected ) {
+  answers.forEach( answer => {
+    answer.disabled = true;
+
+    // De-emphasize the unselected answers.
+    if ( answer !== selected && answer.dataset.correct !== 'true' ) {
+      answer.style.opacity = '0.55';
+    }
+  } );
 }
 
 /**
@@ -87,7 +95,7 @@ function checkAnswer( selected ) {
     counter( explanation, 0, reveal );
   }
 
-  disableButton( answers );
+  disableButton( answers, selected );
 }
 
 /**
