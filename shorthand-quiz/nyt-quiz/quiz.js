@@ -114,12 +114,11 @@ function calculateRank( correct ) {
 
 /**
  * Check's the user's score and displays the rank they have earned.
- * @param {string} finalID The ID of the final score to be displayed
- * @param {string} revealID The ID of the message to be shown to the user depending on the score.
  */
-function grader( finalID, revealID ) {
+function grader() {
   const message = `Congratulations! You answered ${score} out of ${total} questions correctly and have earned the rank of ${calculateRank( score )}.`;
 
-  document.getElementById( revealID ).innerHTML = message;
-  document.getElementById( finalID ).disabled = true;
+  document.getElementById( 'score' ).innerHTML = message;
+  document.getElementById( 'score' ).style.display = 'block';
+  document.getElementById( 'show-score' ).style.display = 'none';
 }

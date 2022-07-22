@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>NYT Style Quiz</title>
     <link rel="stylesheet" type="text/css" href="./style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;700&display=swap" rel="stylesheet">
     <style>
       /* Styles here are simply to make the example page look okay */
       body {
@@ -294,7 +297,7 @@
       <p class="explanation">
         <strong>Answer: D</strong>
         <br /><br />
-        The State Department’s <a href="https://eca.state.gov/" target="_blank">Bureau of Educational and Cultural Affairs</a> helps families <a href="https://eca.state.gov/programs-initiatives/host-high-school-student" target="_blank">host international students</a> and answers <a href="https://exchanges.state.gov/us/commonly-asked-questions-0" target="_blank">commonly asked questions</a> about hosting teenage international exchange students. The bureau also helps Americans to study or teach overseas. Its flagship exchange is the <a href="https://eca.state.gov/fulbright" target="_blank">Fulbright Program, which provides 8,000 scholarships a year to American and international students and scholars. The <a href="https://www.gilmanscholarship.org/" target="_blank">Benjamin A. Gilman International Scholarship<a/> and the <a href="https://clscholarship.org/" target="_blank">Critical Language Scholarship</a> additionally support approximately 3,500 American students to study, intern, or learn languages abroad every year.
+        The State Department’s <a href="https://eca.state.gov/" target="_blank">Bureau of Educational and Cultural Affairs</a> helps families <a href="https://eca.state.gov/programs-initiatives/host-high-school-student" target="_blank">host international students</a> and answers <a href="https://exchanges.state.gov/us/commonly-asked-questions-0" target="_blank">commonly asked questions</a> about hosting teenage international exchange students. The bureau also helps Americans to study or teach overseas. Its flagship exchange is the <a href="https://eca.state.gov/fulbright" target="_blank">Fulbright Program</a>, which provides 8,000 scholarships a year to American and international students and scholars. The <a href="https://www.gilmanscholarship.org/" target="_blank">Benjamin A. Gilman International Scholarship<a/> and the <a href="https://clscholarship.org/" target="_blank">Critical Language Scholarship</a> additionally support approximately 3,500 American students to study, intern, or learn languages abroad every year.
         <br /><br />
         The State Department’s <a href="https://diplomacy.state.gov" target="_blank">National Museum of American Diplomacy</a> offers free resources to teachers and students across the U.S., helping both groups learn about the history of U.S. diplomacy from the earliest days of the United States. (Not a bad way to recruit future foreign service officers who will one day represent their country abroad!)
       </p>
@@ -324,20 +327,17 @@
       </p>
     </article>
 
-    <p class="answer">Test end slide:</p>
-    <input id="final" type="button" class="end" onclick="grader(this.id,'score');" value="Click here to reveal your final score!">
-    <p id="score" class="end"></p>
-
-    <div class="end-card" style="text-align:center">
-      <div class="end-card-inner">
-        <div class="end-card-front">
-          Reveal your score!
-        </div>
-        <div id="front" class="end-card-back" onmouseover="grader(this.id,'back')">
-          <p id="back" class="end"></p>
-        </div>
-      </div>
+    <!-- Reveal Answer -->
+    <div class="reveal-score">
+      <span id="score" class="score"></span>
+      <button id="show-score" class="show-score" type="button" onclick="grader();">
+        Click here to reveal your final score!
+      </button>
+      <p class="cta">
+        Thank you for taking our quiz. Want to learn more about how the State Department benefits people in your state? Visit the <a href="https://www.state.gov/department-of-state-by-state" target="_blank">Department of State by State map</a>.
+      </p>
     </div>
+
     <script src="./quiz.js" type="text/javascript"></script>
   </body>
 </html>
