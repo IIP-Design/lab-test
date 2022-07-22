@@ -39,16 +39,11 @@ function rightAnswer( element ) {
  * Keep track of the user's score and reveal the explanation.
  * @param {HTMLElement} explanation The element that displays the question's explanation
  * @param {number} amount The points to give the user.
- * @param {HTMLElement} reveal The element that displays the user's progress.'
  */
-function counter( explanation, amount, reveal ) {
+function counter( explanation, amount ) {
   score += amount;
 
   explanation.style.setProperty( 'display', 'inline-block', 'important' );
-  /**
-  reveal.style.setProperty('display', 'inline-block', 'important');
-  reveal.innerHTML = "You have answered " + count + " out of " + total + " questions correctly.";
-  */
 }
 
 /**
@@ -84,15 +79,14 @@ function checkAnswer( selected ) {
   const explanations = section.getElementsByClassName( 'explanation' );
 
   const explanation = explanations[0];
-  const reveal = explanations[1];
 
   if ( isCorrect( selected ) ) {
     rightAnswer( selected );
-    counter( explanation, 1, reveal );
+    counter( explanation, 1 );
   } else {
     wrongAnswer( selected );
     rightAnswer( getCorrectAnswer( answers ) );
-    counter( explanation, 0, reveal );
+    counter( explanation, 0 );
   }
 
   disableButton( answers, selected );
