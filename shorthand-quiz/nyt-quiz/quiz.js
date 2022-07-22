@@ -93,28 +93,33 @@ function checkAnswer( selected ) {
 }
 
 /**
+ * Assign the user a rank based on the number of correct answers.
+ * @param {number} correct The number of correct answers.
+ */
+function calculateRank( correct ) {
+  let rank = '';
+
+  if ( correct === total ) {
+    rank = 'Ambassador'; // all 12 correct
+  } else if ( correct > ( total - 5 ) ) {
+    rank = 'Diplomat'; // 8 - 11 correct
+  } else if ( correct > ( total - 9 ) ) {
+    rank = 'Negotiator'; // 4-7 correct
+  } else {
+    rank = 'Model UN participant'; // < 3 correct
+  }
+
+  return rank;
+}
+
+/**
  * Check's the user's score and displays the rank they have earned.
  * @param {string} finalID The ID of the final score to be displayed
  * @param {string} revealID The ID of the message to be shown to the user depending on the score.
  */
 function grader( finalID, revealID ) {
-  // the below is calculated from the global variables
-  const percent = ( score / total );
+  const message = `Congratulations! You answered ${score} out of ${total} questions correctly and have earned the rank of ${calculateRank( score )}.`;
 
-  const baseMessage = `You finished the quiz, your answered ${score} out of ${total} questions correctly! <br>`;
-  let finalMessage = '';
-
-  if ( percent <= 0.33 ) {
-    // modify string for a lower third percentage score
-    finalMessage = `${baseMessage}You're in the bottom third.`;
-  } else if ( percent <= 0.66 ) {
-    // modify string for a middle third percentage score
-    finalMessage = `${baseMessage}You're in the middle third.`;
-  } else {
-    // modify string for an upper third percentage score
-    finalMessage = `${baseMessage}You're a diplomat.`;
-  }
-
-  document.getElementById( revealID ).innerHTML = finalMessage;
+  document.getElementById( revealID ).innerHTML = message;
   document.getElementById( finalID ).disabled = true;
 }
