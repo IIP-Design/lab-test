@@ -22,94 +22,295 @@
     </style>
   </head>
   <body>
-    <article class="question-container" id="1">
-      <p class="question">Luke just proposed to Rachel! The happy couple is enjoying a champagne toast while planning an international honeymoon trip. A reggae festival in Jamaica? Surfing the waves on Brazilian beaches? Visiting the Louvre Museum? Touring Egypt’s pyramids? A safari in Tanzania?<br><br>
-    To help them decide, Luke:</p>
-      <button class="answer" onclick="checkAnswer(this)" data-correct="true">Checks the State Department website to see if there are any advisories in place.</button>
-      <button class="answer" onclick="checkAnswer(this)" data-correct="false">Re-reads his art history books to see if any of his favorite paintings are at the Louvre.</button>
-      <button class="answer" onclick="checkAnswer(this)" data-correct="false">Calls the U.S. Secretary of State’s Office to ask for advice.</button>
-      <button class="answer" onclick="checkAnswer(this)" data-correct="false">Flips a coin.</button>
-      <p class="explanation">The correct answer is A. (But B, reading art history books, is not a bad idea.) <br><br>The Department of State regularly <a href="https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories.html/">updates its advisories</a> to help travelers know where it is safe to travel, where to exercise extra caution, and countries to avoid.</p>
+    <!-- Question 1 -->
+    <article class="question-container" id="q1">
+      <p class="question">
+        Luke Smith and Maria Guzman meet at a Supply Chain Ministerial Forum hosted by the U.S. Department of State. Luke is a baker and Maria is an executive at a large shipping company. During the Forum, Maria and Luke facilitate an inclusive dialogue about possible solutions to current supply chain disruptions.
+        <br /><br />
+        In what ways can an international dialogue help alleviate some of the critical challenges facing global supply chains?
+      </p>
+      <button class="answer" onclick="checkAnswer(this)" data-correct="false">
+        The Forum leads to a breakthrough that helps eradicate COVID-19 globally.
+      </button>
+      <button class="answer" onclick="checkAnswer(this)" data-correct="false">
+        The Forum reminds participants that global challenges are simple and quick to resolve.
+      </button>
+      <button class="answer" onclick="checkAnswer(this)" data-correct="true">
+        The Forum incorporates diverse voices across government, civil society, and academia. Maria can take their recommendations back to her company and implement needed process improvements.
+      </button>
+      <button class="answer" onclick="checkAnswer(this)" data-correct="false">
+        The Forum convinces the Office of the United States Trade Representative to lift all international trade restrictions and duties.
+      </button>
+      <p class="explanation">
+        On July 19 and 20, the U.S. Departments of State and Commerce hosted the 2022 Supply Chain Ministerial Forum, featuring a diverse group of hundreds of international participants. Secretary of State Antony Blinken and Secretary of Commerce Gina Raimondo shared <a href="https://www.state.gov/secretary-antony-j-blinken-and-secretary-of-commerce-gina-raimondo-at-a-virtual-supply-chain-ministerial-forum/" target="_blank">closing remarks</a> during the second day of the Forum. State Department economic officers based in Washington, D.C., and at U.S. embassies overseas work every day to further international cooperation around shared global challenges, including supply chain disruptions.
+      </p>
       <p class="explanation"></p>
     </article>
 
-    <article class="question-container" id="2">
-      <p class="question">Luke likes cities, where he hopes they can enjoy art galleries, museums and fine dining, and Rachel likes outdoor adventure and scenery. The couple will travel to Argentina and visit
-    museums in Buenos Aires, wineries in Mendoza and southernmost terrain of Patagonia.<br>
-    First, Luke needs a passport. Rachel doesn’t need to get one because:</p>
-      <button class="answer" onclick="checkAnswer(this)" data-correct="false">Rachel was born overseas, so she can travel without a passport.</button>
-      <button class="answer" onclick="checkAnswer(this)" data-correct="true">Rachel was issued one six years ago at age 18.</button>
-      <button class="answer" onclick="checkAnswer(this)" data-correct="false">Rachel was issued one nine years ago at age 15.</button>
-      <button class="answer" onclick="checkAnswer(this)" data-correct="false">Rachel is related to a U.S. senator.</button>
-      <p class="explanation">The correct answer is B.<br><br>If Rachel was issued a passport six years ago, when she was age 22, it would be valid for travel today. <br><br>
-    A new passport is valid for 10 years from the date of issuance, <b>if</b> you’re at least 16 years old
-    when you receive it. Under 16? Your new passport is valid for only 5 years. (In the
-    situation described in C, Rachel would be holding an expired passport.) <a href="https://travel.state.gov/content/travel/en/passports/passport-help/faqs.html">See more information here.</a></p>
+    <!-- Question 2 -->
+    <article class="question-container" id="q2">
+      <p class="question">
+        Luke just proposed to Maria! The happy couple is enjoying a champagne toast while planning an international honeymoon trip. Marveling at the temples of Angkor Wat in Cambodia? Surfing the waves on Brazilian beaches? Visiting the Louvre Museum in France? Touring Egypt’s pyramids? A safari in Tanzania?
+        <br /><br />
+        To help them decide, Luke: 
+      </p>
+      <button class="answer" onclick="checkAnswer(this)" data-correct="true">
+        Checks the State Department website to read the Travel Advisories for these countries.
+      </button>
+      <button class="answer" onclick="checkAnswer(this)" data-correct="false">
+        Rereads his art history books to see if any of his favorite paintings are at the Louvre.
+      </button>
+      <button class="answer" onclick="checkAnswer(this)" data-correct="false">
+        Calls the U.S. Secretary of State’s Office to ask for advice.
+      </button>
+      <button class="answer" onclick="checkAnswer(this)" data-correct="false">
+        Flips a coin.
+      </button>
+      <p class="explanation">
+        The Department of State regularly updates its <a href="https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories.html/" target="_blank">Travel Advisories</a> to help travelers know where to exercise extra caution when traveling and which countries to avoid. 
+      </p>
       <p class="explanation"></p>
     </article>
 
-    <article class="question-container" id="3">
-      <p class="question">Luke fills out the required forms, gathers his IDs and payment and makes an appointment to apply for his passport in person, because:</p>
-      <button class="answer" onclick="checkAnswer(this)" data-correct="true">This is his first passport.</button>
-      <button class="answer" onclick="checkAnswer(this)" data-correct="false">In-person applications get expedited.</button>
-      <button class="answer" onclick="checkAnswer(this)" data-correct="false">The $130 fee can only be paid in cash.</button>
-      <button class="answer" onclick="checkAnswer(this)" data-correct="false">All of the above.</button>
-      <p class="explanation">The correct answer is A.<br><br>First passports require an
-    <a href="https://travel.state.gov/content/travel/en/passports/need-passport/apply-in-person.html">in-person appointment.</a> The State Department has issued 146 million passports in recent years. Renewals can be
-    applied for by mail.</p>
+    <!-- Question 3 -->
+    <article class="question-container" id="q3">
+      <p class="question">
+        Luke likes cities, where he hopes they can enjoy art galleries, museums, and fine dining, and Maria likes outdoor adventure and scenery. The couple will travel to Argentina and visit museums in Buenos Aires, wineries in Mendoza, and the southernmost terrain of Patagonia. 
+        <br /><br />
+        First, Luke needs a passport. Maria doesn’t need to get one because: 
+      </p>
+      <button class="answer" onclick="checkAnswer(this)" data-correct="false">
+        Maria keeps her passport in a file and knows right where to find it.
+      </button>
+      <button class="answer" onclick="checkAnswer(this)" data-correct="false">
+        Maria checked her passport, and it is valid for another two years.
+      </button>
+      <button class="answer" onclick="checkAnswer(this)" data-correct="false">
+        Maria is not changing her last name before the honeymoon, so her passport matches her name on her ticket and other travel information.
+      </button>
+      <button class="answer" onclick="checkAnswer(this)" data-correct="true">
+        All of the above.
+      </button>
+      <p class="explanation">
+        In the excitement of travel, people forget to do these important things: locate their passport, check the expiration date, and make sure information (like your name) is still the same. Maria checked these steps at the same time they researched their trip, so she is <a href="https://travel.state.gov/content/travel/en/passports/passport-help/faqs.html#:~:text=How%20long%20is%20a%20passport,is%20valid%20for%205%20years" target="_blank">ready to travel with her valid passport</a>. 
+      </p>
       <p class="explanation"></p>
     </article>
 
-  <article class="question-container" id="4">
-    <p class="question">During the newlyweds’ tour of Argentinian vineyards, Katie enjoys the local Malbec wine. But when they return to their hotel, she realizes she left her passport behind somewhere. After calling the tour guide, who doesn’t have it, she should:</p>
-    <button class="answer" onclick="checkAnswer(this)" data-correct="false">Call the State Department’s Bureau of Population, Refugees and Migration to ask for help.</button>
-    <button class="answer" onclick="checkAnswer(this)" data-correct="false">Go right to the airport and book a flight back home.</button>
-    <button class="answer" onclick="checkAnswer(this)" data-correct="true">Call the nearest U.S. consulate and ask for an emergency passport.</button>
-    <button class="answer" onclick="checkAnswer(this)" data-correct="false">Pace in a circle until Room Service brings more Malbec.</button>
-    <p class="explanation">The correct answer is C.<br><br>Americans traveling abroad sometimes lose their passports. If that happens, they can get a temporary replacement (which will be valid for one year) from the U.S. embassy (always located in the capital city of a foreign country) or the nearest U.S. consulate.<br><br>A consulate functions as a U.S. embassy’s satellite office in other cities (there are 93 consulates worldwide, and 163 embassies). Consulate offices, which are part of the State Department’s <a href="ttps://www.state.gov/bureaus-offices/under-secretary-for-management/bureau-of-consular-affairs/">Bureau of Consular Affairs</a>, issued 59,904 emergency passports overseas in a recent year.<br><br>To report a lost or stolen passport, U.S. travelers abroad (except in Canada) should call 1-202-501-4444. In Canada, they should call 1-888-407-4747.</p>
+  <!-- Question 4 -->
+  <article class="question-container" id="q4">
+    <p class="question">
+      This is Luke’s first passport. He fills out the required form and gathers his ID and citizenship documents along with acceptable payment. He makes an appointment to apply for his passport in person at his neighborhood library because:
+    </p>
+    <button class="answer" onclick="checkAnswer(this)" data-correct="true">
+      He must submit his passport form in person and show ID because it is his first passport.  
+    </button>
+    <button class="answer" onclick="checkAnswer(this)" data-correct="false">
+      His local library issues all types of books, including passport books.
+    </button>
+    <button class="answer" onclick="checkAnswer(this)" data-correct="false">
+      The passport fee can only be paid in cash.
+    </button>
+    <button class="answer" onclick="checkAnswer(this)" data-correct="false">
+      All of the above.
+    </button>
+    <p class="explanation">
+      He must submit his passport form in person and show ID because it is his first passport. Anyone applying for their first passport is required to submit the application in person. Thousands of local facilities around the United States, like post offices and libraries, are approved by the Department of State to accept <a href="https://travel.state.gov/content/travel/en/passports/need-passport/apply-in-person.html#:~:text=You%20must%20apply%20in%20person,you%20were%20under%20age%2016" target="_blank">in-person passport applications</a>. They offer you a convenient place to apply in person, but they do not print the passport onsite. They are trained to take your application and send the application to the Department of State, which adjudicates the application, then prints and mails you your passport after a number of weeks.
+    </p>
     <p class="explanation"></p>
   </article>
 
-  <article class="question-container" id="5">
-    <p class="question">During the next phase of Luke and Rachel’s honeymoon, the couple visits Patagonia, where they become fascinated with penguins. Their penguin obsession makes them forget to post on social media despite having promised family and friends they would every day.<br><br>Rachel’s best friend Zeze is concerned, and after talking to Rachel’s mom, Zeze wisely decides to:</p>
-    <button class="answer" onclick="checkAnswer(this)" data-correct="false">Fly to Buenos Aires business class to re-trace the couple’s itinerary.</button>
-    <button class="answer" onclick="checkAnswer(this)" data-correct="false">Call the Argentinian Embassy in Washington for help.</button>
-    <button class="answer" onclick="checkAnswer(this)" data-correct="true">Call a State Department 800 number for a welfare/whereabouts check on Rachel.</button>
-    <button class="answer" onclick="checkAnswer(this)" data-correct="false">Send a message to a research station in Patagonia, by way of the State Department’s “diplomatic pouch.”</button>
-    <p class="explanation">The correct answer is C.<br><br>For emergencies abroad involving U.S. citizens, consular officials can perform welfare/whereabouts checks. To initiate a check, Americans can call the Bureau of Consular Affairs at 1-888-407-4747, from the U.S. and Canada, or 1-202-501-444, from all other countries.</p>
+  <!-- Question 5 -->
+  <article class="question-container" id="q5">
+    <p class="question">
+      During the newlyweds’ tour of Argentinian vineyards, Maria enjoys the local malbec wine. But when they return to their hotel, she realizes she left her passport behind somewhere. After calling the tour guide, who doesn’t have it, she should:
+    </p>
+    <button class="answer" onclick="checkAnswer(this)" data-correct="false">
+      Call the State Department’s Bureau of Population, Refugees, and Migration to ask for help. 
+    </button>
+    <button class="answer" onclick="checkAnswer(this)" data-correct="false">
+      Go right to the airport and book a flight back home.
+    </button>
+    <button class="answer" onclick="checkAnswer(this)" data-correct="true">
+      Call the nearest U.S. Consulate or Embassy to make an appointment for an emergency passport.
+    </button>
+    <button class="answer" onclick="checkAnswer(this)" data-correct="false">
+      Pace in a circle until room service brings more malbec.
+    </button>
+    <p class="explanation">
+      U.S. citizens traveling abroad sometimes lose their passports. When they do, they can get a temporary replacement (which will be valid for one year) from the U.S. Embassy  or the nearest U.S. Consulate. 
+      <br /><br />
+      A U.S. Embassy is located in the capital city of a foreign country, whereas a consulate functions as a U.S. Embassy’s satellite office in other cities. There are 163 U.S. embassies and 93 U.S. consulates worldwide. To find the nearest U.S. Embassy or Consulate go to <a href="https://www.usembassy.gov/" target="_blank">https://www.usembassy.gov/</a>.
+    </p>
     <p class="explanation"></p>
   </article>
 
-  <article class="question-container" id="6">
-    <p class="question">The same State Department bureau that helped Zeze learn that Rachel and Luke were safe in Patagonia also:</p>
-    <button class="answer" onclick="checkAnswer(this)" data-correct="true">Registers overseas births of U.S. citizens, assists families of U.S. citizens who die overseas and visits U.S. citizens in prisons overseas.</button>
-    <button class="answer" onclick="checkAnswer(this)" data-correct="false">Refers U.S. citizens to rental car services in major foreign cities, exchanges U.S. currency for local currency at U.S. embassies, and stores American tourists’ itineraries.</button>
-    <button class="answer" onclick="checkAnswer(this)" data-correct="false">Placeholder text.</button>
-    <button class="answer" onclick="checkAnswer(this)" data-correct="false">Placeholder text.</button>
-    <p class="explanation">The correct answer is A.<br><br>It’s the Bureau Consular Affairs. In a recent year, in addition to responding to 27,282 welfare/whereabouts inquiries about Americans abroad, it registered 66,595 overseas births of U.S. citizens; assisted families of 11,901 U.S. citizens who died overseas; and conducted 10,920 visits to U.S. citizens in overseas prisons.</p>
+  <!-- Question 6 -->
+  <article class="question-container" id="q6">
+    <p class="question">
+      During the next phase of Luke and Maria’s honeymoon, the couple visits Patagonia, where they become fascinated with penguins. Their penguin obsession makes them forget to post on social media despite having promised family and friends they would every day. After being unable to reach them directly, Maria’s best friend, Zeze, is concerned and decides to:
+    </p>
+    <button class="answer" onclick="checkAnswer(this)" data-correct="false">
+      Fly to Buenos Aires business class to retrace the couple’s itinerary.
+    </button>
+    <button class="answer" onclick="checkAnswer(this)" data-correct="false">
+      Call the Argentinian Embassy in Washington for help.
+    </button>
+    <button class="answer" onclick="checkAnswer(this)" data-correct="true">
+      Call a State Department 800 number for a welfare/whereabouts check on Maria.
+    </button>
+    <button class="answer" onclick="checkAnswer(this)" data-correct="false">
+      Send a message to a research station in Patagonia, by way of the State Department’s “diplomatic pouch.”
+    </button>
+    <p class="explanation">
+      For emergencies abroad involving U.S. citizens, consular officials can perform welfare/whereabouts checks. To initiate a check, family or friends can call the Bureau of Consular Affairs at 1-888-407-4747, from the U.S. and Canada, or 1-202-501-4444, from all other countries.
+    </p>
     <p class="explanation"></p>
   </article>
 
-  <article class="question-container" id="7">
-    <p class="question">The honeymoon has been great, but when Luke and Rachel go to the airport to return home, they learn their flight is canceled due to COVID-19 lockdowns.The couple fears they will be stranded in Buenos Aires.<br><br>But they learn that they can get help from:</p>
-    <button class="answer" onclick="checkAnswer(this)" data-correct="false">A large American entertainment company, which allows them to work as extras on its
-  Mermaid Fantasy Cruise to Florida.</button>
-    <button class="answer" onclick="checkAnswer(this)" data-correct="false">Argentinian officials who operate a hostel for stranded travelers in coordination with the U.S. Embassy.</button>
-    <button class="answer" onclick="checkAnswer(this)" data-correct="false">Luke’s aunt, who knows someone with a private jet who can pick them up.</button>
-    <button class="answer" onclick="checkAnswer(this)" data-correct="true">A repatriation expert from the U.S. State Department.</button>
-    <p class="explanation">The correct answer is D.<br><br>During the first two years of the COVID-19 pandemic, the State Department’s Bureau of Consular Affairs helped repatriate more than 115,000 Americans. The State Department has a long history of repatriating Americans who would otherwise be stranded overseas, sometimes in harm’s way due to war or natural disasters.</p>
+  <!-- Question 7 -->
+  <article class="question-container" id="q7">
+    <p class="question">
+      Consular Affairs, the same State Department bureau that helped Zeze learn that Maria and Luke were safe in Patagonia, also:
+    </p>
+    <button class="answer" onclick="checkAnswer(this)" data-correct="false">
+      Registers overseas births of U.S. citizens.
+    </button>
+    <button class="answer" onclick="checkAnswer(this)" data-correct="false">
+      Assists families of U.S. citizens who die overseas.
+    </button>
+    <button class="answer" onclick="checkAnswer(this)" data-correct="false">
+      Visits U.S. citizens in prisons overseas.
+    </button>
+    <button class="answer" onclick="checkAnswer(this)" data-correct="true">
+      All of the above.
+    </button>
+    <p class="explanation">
+      In a recent year, the Department responded to 27,282 welfare/whereabouts inquiries about Americans abroad, registered 66,595 overseas births of U.S. citizens, assisted families of 11,901 U.S. citizens who died overseas, and conducted 10,920 visits to U.S. citizens in overseas prisons. 
+    </p>
     <p class="explanation"></p>
   </article>
 
-  <article class="question-container" id="8">
-    <p class="question">After working with the State Department to get home, Luke and Rachel are settling in to married life and thinking about growing their family. From friends with children, they learn that the State Department:</p>
-    <button class="answer" onclick="checkAnswer(this)" data-correct="false">Publishes lists of baby names popular in 193 countries around the world.</button>
-    <button class="answer" onclick="checkAnswer(this)" data-correct="false">Enrolls children’s passports in a program that alerts authorities of the risk of parent-child abduction during custody disputes.</button>
-    <button class="answer" onclick="checkAnswer(this)" data-correct="false">Facilitates adoptions of children from some other countries by U.S. parents.</button>
-    <button class="answer" onclick="checkAnswer(this)" data-correct="true">B and C</button>
-    <p class="explanation">The correct answer is D.<br><br>In a recent year, the Bureau of Consular Affairs <b>facilitated 4,059 adoptions to the United States and enrolled 4,732 children in the Children’s Passport Issuance Alert Program</b> to prevent international parent child abduction during child custody disputes.</p>
+  <!-- Question 8 -->
+  <article class="question-container" id="q8">
+    <p class="question">
+      The honeymoon has been great, but when Luke and Maria go to the airport to return home, they learn their flight is canceled due to smoke from wildfires near the airport. They fear they will be stranded in Buenos Aires but learn that they can get help from:
+    </p>
+    <button class="answer" onclick="checkAnswer(this)" data-correct="false">
+      A large American entertainment company, which allows them to work as extras on its Mermaid Fantasy Cruise to Florida.
+    </button>
+    <button class="answer" onclick="checkAnswer(this)" data-correct="false">
+      Argentinian officials who operate a hostel for stranded travelers in coordination with the U.S. Embassy.
+    </button>
+    <button class="answer" onclick="checkAnswer(this)" data-correct="false">
+      Luke’s aunt, who knows someone with a private jet.
+    </button>
+    <button class="answer" onclick="checkAnswer(this)" data-correct="true">
+      The American Citizens Services section at the nearest U.S. Embassy or Consulate.
+    </button>
+    <p class="explanation">
+      During the first two years of the COVID-19 pandemic, the State Department’s Bureau of Consular Affairs facilitated the return of more than 115,000 U.S. citizens. 
+      <br /><br />
+      The Department has a <a href="https://history.state.gov/historicaldocuments/frus1941v01/ch7" target="_blank">long history of repatriating U.S. citizens</a> who would otherwise be stranded overseas, sometimes in harm’s way due to war or natural disasters. 
+    </p>
     <p class="explanation"></p>
   </article>
+
+  <!-- Question 9 -->
+  <article class="question-container" id="q9">
+    <p class="question">
+      After they get home, Luke and Maria settle in to married life and start thinking about having children. From friends with children, they learn that the State Department:
+    </p>
+    <button class="answer" onclick="checkAnswer(this)" data-correct="false">
+      Publishes lists of baby names popular in 193 countries around the world.
+    </button>
+    <button class="answer" onclick="checkAnswer(this)" data-correct="false">
+      Allows parents or legal guardians to enroll in a program that alerts them of a pending passport application for their children under the age of 18.
+    </button>
+    <button class="answer" onclick="checkAnswer(this)" data-correct="false">
+      Issues visas for children adopted from some other countries.
+    </button>
+    <button class="answer" onclick="checkAnswer(this)" data-correct="true">
+      B & C.
+    </button>
+    <p class="explanation">
+      In a recent year, the Bureau of Consular Affairs facilitated 4,059 adoptions to the United States and enrolled more than 4,500 children in the Children’s Passport Issuance Alert Program to assist in the prevention of international parental child abduction. 
+    </p>
+    <p class="explanation"></p>
+  </article>
+
+  <!-- Question 10 -->
+  <article class="question-container" id="q10">
+    <p class="question">
+      The couple have started a business that makes sauces that have become popular with chefs in the U.S. Southwest. They think there is a market overseas, because they are getting online orders from tourists who have bought their sauces at the Dallas Airport. To explore opportunities in overseas markets, they:
+    </p>
+    <button class="answer" onclick="checkAnswer(this)" data-correct="false">
+      Enroll in Direct Line, to join webcasts with commercial experts at U.S. embassies.
+    </button>
+    <button class="answer" onclick="checkAnswer(this)" data-correct="false">
+      Work with an interagency U.S. government team to find export opportunities.
+    </button>
+    <button class="answer" onclick="checkAnswer(this)" data-correct="false">
+      Produce product labels in 14 languages, with the help of State Department translators.
+    </button>
+    <button class="answer" onclick="checkAnswer(this)" data-correct="true">
+      A & B.
+    </button>
+    <p class="explanation">
+      The State Department’s <a href="https://www.state.gov/bureaus-offices/under-secretary-for-economic-growth-energy-and-the-environment/bureau-of-economic-and-business-affairs/" target="_blank">of Economic and Business Affairs</a> works to expand opportunities for U.S. small and medium-sized businesses with the <a href="https://www.state.gov/direct-line-for-american-business/" target="_blank">Direct Line for American Business</a> program, (or Direct Line, for short). Because 96 percent of global consumers live outside the United States, Direct Line helps U.S. business owners engage with U.S. ambassadors and U.S. commercial experts in 190 countries to learn about markets abroad. 
+      <br /><br />
+      Also, the Departments of State and Commerce jointly lead the <a href="https://www.state.gov/direct-line-for-american-business/" target="_blank">Deal Teams initiative</a>, in collaboration with other U.S. agencies. At U.S. embassies, Deal Teams (interagency officers and embassy staffers) help U.S. businesses interested in exporting to successfully compete.
+    </p>
+    <p class="explanation"></p>
+  </article>
+
+    <!-- Question 11 -->
+    <article class="question-container" id="q11">
+      <p class="question">
+        Time passes quickly, and Luke and Maria are now the proud parents of two secondary school students who are interested in learning about international cultures and foreign affairs. Luke and Maria can foster their teens’ interests by:
+      </p>
+      <button class="answer" onclick="checkAnswer(this)" data-correct="false">
+        Hosting a visiting international student through a State Department program.
+      </button>
+      <button class="answer" onclick="checkAnswer(this)" data-correct="false">
+        Subscribing to a State Department service that offers unlimited recorded world music.
+      </button>
+      <button class="answer" onclick="checkAnswer(this)" data-correct="false">
+        Visiting the National Museum of American Diplomacy in Washington.
+      </button>
+      <button class="answer" onclick="checkAnswer(this)" data-correct="true">
+        A & C.
+      </button>
+      <p class="explanation">
+        The State Department’s Bureau of Educational and Cultural Affairs helps families <a href="https://eca.state.gov/programs-initiatives/host-high-school-student" target="_blank">host international students</a> and answers commonly asked questions about hosting teenage international exchange students [link:  https://exchanges.state.gov/us/commonly-asked-questions-0]. The bureau also helps Americans to study or teach overseas. [link:  https://eca.state.gov/] Its flagship exchange is the Fulbright Program, which provides 8,000 scholarships a year to American and international students and scholars. https://eca.state.gov/fulbright]. The Benjamin A. Gilman International Scholarship [link: https://www.gilmanscholarship.org/] and the Critical Language Scholarship [link: https://clscholarship.org/] additionally support approximately 3,500 American students to study, intern, or learn languages abroad every year.
+        <br /><br />
+        The State Department’s <a href="https://diplomacy.state.gov" target="_blank">National Museum of American Diplomacy</a> offers free resources to teachers and students across the U.S., helping both groups learn about the history of U.S. diplomacy from the earliest days of the United States. (Not a bad way to recruit future foreign service officers who will one day represent their country abroad!)
+      </p>
+      <p class="explanation"></p>
+    </article>
+
+    <!-- Question 12 -->
+    <article class="question-container" id="q12">
+      <p class="question">
+        Maria and Luke’s older child, Alexa, now attends a U.S. university in Florida to which her roommate — Nadja from Montenegro — applied after attending a college fair sponsored by the U.S. Embassy in Podgorica. Why do U.S. embassies regularly hold college fairs?
+      </p>
+      <button class="answer" onclick="checkAnswer(this)" data-correct="false">
+        To give college recruiters a break.
+      </button>
+      <button class="answer" onclick="checkAnswer(this)" data-correct="true">
+        To promote U.S. education to international students and create jobs for Americans.
+      </button>
+      <button class="answer" onclick="checkAnswer(this)" data-correct="false">
+        To add a social event to the embassy calendar.
+      </button>
+      <button class="answer" onclick="checkAnswer(this)" data-correct="false">
+        To boost enrollment at the ambassador’s own alma mater.
+      </button>
+      <p class="explanation">
+        U.S. embassies regularly hold college fairs to promote U.S. higher education. (Did you know that there are currently almost 1 million international students attending U.S. colleges and universities?) According to recent estimates, for every eight international students in America, a new U.S. job is created. So the State Department’s marketing of U.S. schools boosts the competitiveness of these institutions while also creating more employment within the United States.
+      </p>
+      <p class="explanation"></p>
+    </article>
 
     <p class="answer">Test end slide:</p>
     <input id="final" type="button" class="end" onclick="grader(this.id,'score');" value="Click here to reveal your final score!">
