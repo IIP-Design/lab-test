@@ -34,13 +34,31 @@ input:disabled {
  * to explain the correct answer in the quiz.
  **/
 
-.question,.explanation {
+.question,
+.explanation {
   font-family: Merriweather !important;
   font-size: 18px;
   text-align: inline-block;
   text-decoration: none !important;
   margin-top: 5px;
   margin-bottom: 5px;
+}
+
+/* Prefix the question with letters */
+.question-container > button:nth-of-type(1)::before {
+  content: "A."
+}
+
+.question-container > button:nth-of-type(2)::before {
+  content: "B."
+}
+
+.question-container > button:nth-of-type(3)::before {
+  content: "C."
+}
+
+.question-container > button:nth-of-type(4)::before {
+  content: "D."
 }
 
 .explanation {
