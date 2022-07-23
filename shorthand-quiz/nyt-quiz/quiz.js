@@ -14,7 +14,7 @@ function disableButton( answers, selected ) {
 
     // De-emphasize the unselected answers.
     if ( answer !== selected && answer.dataset.correct !== 'true' ) {
-      answer.style.opacity = '0.55';
+      answer.classList.add( 'unselected' );
     }
   } );
 }
@@ -43,7 +43,7 @@ function rightAnswer( element ) {
 function counter( explanation, amount ) {
   score += amount;
 
-  explanation.style.setProperty( 'display', 'inline-block', 'important' );
+  explanation.classList.add( 'explain' );
 }
 
 /**

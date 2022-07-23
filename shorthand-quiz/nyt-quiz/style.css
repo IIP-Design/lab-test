@@ -4,74 +4,91 @@
 :root {
   --blueDark: #0a2240;
   --blueMedium: #002d74;
+  --blueRoyal: #496fd8;
+  --blueViolet: #95b5e4;
+  --blueBSky: #a6e5f3;
   --blueLight: #e1f3f8;
   --blueLightest: #f0f8ff;
-  --red: #f9dede;
-  --green: #94bfa2;
+  --red: #981b1e;
+  --green: #216e1f;
   --grey: #e4e5e6;
+  --greyBlueish: #f2f2f2;
+  --white: #ffffff;
   --font: 'Public Sans', sans-serif;
+  --fontSizeBigger: 22px;
+  --shadow: 0 20px 25px -5px rgb(0 0 0 / 10%), 0 8px 10px -6px rgb(0 0 0 / 10%);
+  --shadowHeavy: 0 20px 25px -3px rgba(0, 0, 0, 0.2), 0 8px 15px -4px rgba(0, 0, 0, 0.2);
 }
 
 button {
   cursor: pointer;
 }
 
-/** Explanation:
- * This section relates to the styling of the text that appears
- * to explain the correct answer in the quiz.
- **/
-
-.question,
-.explanation {
-  font-family: var(--font);
-  font-size: 18px;
-  text-align: inline-block;
-  text-decoration: none !important;
-  margin-top: 5px;
-  margin-bottom: 5px;
+a:hover {
+  font-weight: bold;
 }
 
-.explanation {
-  display: none !important;
+/* General font sizes and spacing*/
+.question-container {
+  padding: 1.5rem 0;
+}
+
+p.progress {
+  font-weight: bold;
+  margin-top: 0;
+}
+
+p.progress,
+strong.revealed {
+  font-family: var(--font);
+  font-size: var(--fontSizeBigger);
+}
+
+p.question,
+p.explanation {
+  font-family: var(--font);
+  font-size: 18px;
+}
+
+.question-container .explanation {
+  display: none;
   transition-duration: 0.4s;
+}
+
+.explanation.explain {
+  display: block;
 }
 
 /* Prefix the question with letters */
 .question-container > button:nth-of-type(1)::before {
-  content: "A."
+  content: "A) "
 }
 
 .question-container > button:nth-of-type(2)::before {
-  content: "B."
+  content: "B) "
 }
 
 .question-container > button:nth-of-type(3)::before {
-  content: "C."
+  content: "C) "
 }
 
 .question-container > button:nth-of-type(4)::before {
-  content: "D."
+  content: "D) "
 }
 
-/** Answer:
- * This section relates to the styling of the text that is
- * initially displayed as the four answers a user might select.
- * When a user hovers over an answer, the color of the text
- * and the background both change.
- **/
-
+/* Style the answer options in all of their various states */
 .answer {
   font-family: var(--font);
   font-size: 18px;
   text-align: left;
   text-decoration: none;
   color: var(--blueDark);
-  background-color: var(--blueLightest);
-  display: inline-block;
-  border: none;
-  padding: 20px 20px 20px 20px;
-  margin-top: 5px;
-  margin-bottom: 5px;
+  background-color: var(--blueBSky);
+  border: var(--grey);
+  border-radius: 5px;
+  box-shadow: var(--shadow);
+  padding: 1.2rem;
+  margin: 0.7rem 0;
   width: 100%;
 }
 
@@ -79,18 +96,33 @@ button {
   cursor: default;
 }
 
+.answer:focus {
+  outline: solid 2px var(--blueRoyal);
+}
+
 .answer:not(:disabled):hover {
-  color: var(--blueMedium) !important;
-  background-color: var(--blueLight);
+  background-color: var(--blueViolet);
 }
 
 .answer.correct {
   background-color: var(--green);
+  border: 4px solid #fff;
+  box-shadow: var(--shadowHeavy);
+  color: var(--white);
   font-weight: bold;
+  transform: scale(1.05);
+  transition: all 0.3s;
 }
 
 .answer.incorrect {
-  background-color: var(--red);
+  background-color: var(--white);
+  color: var(--red);
+  font-weight: bold;
+}
+
+.answer.unselected {
+  background-color: var(--greyBlueish);
+  opacity: 0.55;
 }
 
 /* Style the final HTML section which displays the quiz result */
@@ -125,6 +157,6 @@ button {
 }
 
 .show-score:hover {
-  color: var(--blueMedium) !important;
+  color: var(--blueMedium);
   background-color: var(--blueLight);
 }
