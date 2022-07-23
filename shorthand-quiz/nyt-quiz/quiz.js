@@ -118,7 +118,45 @@ function calculateRank( correct ) {
 function grader() {
   const message = `Congratulations! You answered ${score} out of ${total} questions correctly and have earned the rank of ${calculateRank( score )}.`;
 
+  // Display the result message.
   document.getElementById( 'score' ).innerHTML = message;
   document.getElementById( 'score' ).style.display = 'block';
+
+  // Hide the show score button.
   document.getElementById( 'show-score' ).style.display = 'none';
+
+  // Show the reset button.
+  document.getElementById( 'reset' ).style.display = 'block';
+}
+
+/**
+ * Reset the quiz to it's original state.
+ */
+function resetQuiz() {
+  // Reset the score to zero.
+  score = 0;
+
+  // Reset the styling on all the answers.
+  const [...answers] = document.querySelectorAll( '.answer' );
+
+  answers.forEach( answer => {
+    answer.classList.remove( 'correct', 'incorrect', 'unselected' );
+    answer.disabled = false;
+  } );
+
+  // Reset the score result.
+  const scoreEl = document.getElementById( 'score' );
+
+  // Clear the result message.
+  scoreEl.innerHTML = '';
+  scoreEl.style.display = 'none';
+
+  // Display the show score button.
+  document.getElementById( 'show-score' ).style.display = 'block';
+
+  // Hide the reset button.
+  document.getElementById( 'reset' ).style.display = 'none';
+
+  // Scroll back to first question.
+  document.getElementById( 'q1' ).scrollIntoView( { behavior: 'smooth' } );
 }

@@ -6,7 +6,7 @@
   --blueMedium: #002d74;
   --blueRoyal: #496fd8;
   --blueViolet: #95b5e4;
-  --blueBSky: #a6e5f3;
+  --blueSky: #a6e5f3;
   --blueLight: #e1f3f8;
   --blueLightest: #f0f8ff;
   --red: #981b1e;
@@ -83,7 +83,7 @@ p.explanation {
   text-align: left;
   text-decoration: none;
   color: var(--blueDark);
-  background-color: var(--blueBSky);
+  background-color: var(--blueSky);
   border: var(--grey);
   border-radius: 5px;
   box-shadow: var(--shadow);
@@ -148,7 +148,6 @@ p.explanation {
 }
 
 .reveal-score > button {
-  display: block;
   font-weight: bold;
 }
 
@@ -159,4 +158,12 @@ p.explanation {
 .show-score:hover {
   color: var(--blueMedium);
   background-color: var(--blueLight);
+}
+
+.show-score {
+  display: block;
+}
+
+.reset {
+  display: none;
 }
