@@ -76,32 +76,41 @@ p.explanation {
   content: "D) "
 }
 
-/* Style the answer options in all of their various states */
-.answer {
+/* Shared button styles */
+.answer,
+.reset,
+.show-score {
   font-family: var(--font);
   font-size: 18px;
-  text-align: left;
-  text-decoration: none;
   color: var(--blueDark);
   background-color: var(--blueSky);
   border: var(--grey);
   border-radius: 5px;
   box-shadow: var(--shadow);
   padding: 1.2rem;
+}
+
+.answer:focus,
+.reset:focus,
+.show-score:focus {
+  outline: solid 2px var(--blueRoyal);
+}
+
+.answer:not(:disabled):hover,
+.reset:hover,
+.show-score:hover {
+  background-color: var(--blueViolet);
+}
+
+/* Style the answer options in all of their various states */
+.answer {
   margin: 0.7rem 0;
+  text-align: left;
   width: 100%;
 }
 
 .answer:disabled {
   cursor: default;
-}
-
-.answer:focus {
-  outline: solid 2px var(--blueRoyal);
-}
-
-.answer:not(:disabled):hover {
-  background-color: var(--blueViolet);
 }
 
 .answer.correct {
@@ -127,7 +136,6 @@ p.explanation {
 
 /* Style the final HTML section which displays the quiz result */
 .reveal-score {
-  background-color: var(--blueLightest);
   color: var(--blueDark);
   display: flex;
   flex-direction: column;
@@ -136,7 +144,6 @@ p.explanation {
 }
 
 .cta,
-.reveal-score > button,
 .reveal-score > span {
   border: none;
   color: var(--blueDark);
@@ -152,18 +159,19 @@ p.explanation {
 }
 
 .reveal-score > span {
+  background-color: var(--white);
   display: none;
-}
-
-.show-score:hover {
-  color: var(--blueMedium);
-  background-color: var(--blueLight);
+  font-size: 22px;
+  margin-bottom: 3rem;
 }
 
 .show-score {
   display: block;
+  font-size: 24px;
+  margin: 2.5rem 1rem;
 }
 
 .reset {
+  align-self: center;
   display: none;
 }
