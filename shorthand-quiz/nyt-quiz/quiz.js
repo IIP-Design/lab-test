@@ -144,6 +144,13 @@ function resetQuiz() {
     answer.disabled = false;
   } );
 
+  // Hide all the explanations.
+  const [...explanations] = document.querySelectorAll( '.explanation' );
+
+  explanations.forEach( explanation => {
+    explanation.classList.remove( 'explain' );
+  } );
+
   // Reset the score result.
   const scoreEl = document.getElementById( 'score' );
 

@@ -51,12 +51,12 @@ p.explanation {
 }
 
 .question-container .explanation {
-  display: none;
   transition-duration: 0.4s;
+  visibility: hidden;
 }
 
 .explanation.explain {
-  display: block;
+  visibility: visible;
 }
 
 /* Prefix the question with letters */
