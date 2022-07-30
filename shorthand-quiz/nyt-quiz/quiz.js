@@ -1,4 +1,5 @@
 let score = 0; // score of the user, starting at 0
+let attempt = 1; // how many times the user has submitted the quiz
 
 // Dynamically calculate to number of questions on the page.
 const total = document.querySelectorAll( '.question-container' ).length;
@@ -43,6 +44,12 @@ function rightAnswer( element ) {
 function counter( explanation, amount ) {
   score += amount;
 
+  // Save the score in the show score button so that we can see it in analytics.
+  const showScoreBtn = document.getElementById( 'show-score' );
+
+  showScoreBtn.dataset.score = score;
+
+  // Show the explanation.
   explanation.classList.add( 'explain' );
 }
 
@@ -116,6 +123,11 @@ function calculateRank( correct ) {
  * Check's the user's score and displays the rank they have earned.
  */
 function grader() {
+  // Increment the number of attempts the user has taken so that we can see it in analytics.
+  const resetBtn = document.getElementById( 'reset' );
+
+  resetBtn.dataset.attempt = ++attempt;
+
   const message = `Congratulations! You answered ${score} out of ${total} questions correctly and have earned the rank of ${calculateRank( score )}.`;
 
   // Display the result message.
@@ -151,8 +163,11 @@ function resetQuiz() {
     explanation.classList.remove( 'explain' );
   } );
 
-  // Reset the score result.
+  // Reset the quiz score and attempt counts.
   const scoreEl = document.getElementById( 'score' );
+  const showScoreBtn = document.getElementById( 'show-score' );
+
+  showScoreBtn.dataset.score = 0;
 
   // Clear the result message.
   scoreEl.innerHTML = '';

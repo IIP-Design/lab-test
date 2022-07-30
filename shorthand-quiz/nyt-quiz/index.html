@@ -345,8 +345,10 @@
     <!-- Reveal Answer -->
     <div class="reveal-score">
       <span id="score" class="score"></span>
-      <button id="reset" class="reset" type="button" onclick="resetQuiz();">Retake the Quiz!</button>
-      <button id="show-score" class="show-score" type="button" onclick="grader();">
+      <button data-attempt="1" id="reset" class="reset" type="button" onclick="resetQuiz();">
+        Retake the Quiz!
+      </button>
+      <button data-score="0" id="show-score" class="show-score" type="button" onclick="grader();">
         Click here to reveal your final score!
       </button>
       <p class="cta">
