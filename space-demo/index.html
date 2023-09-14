@@ -9,15 +9,57 @@
   <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,100;0,200;0,300;0,500;1,400&family=Montserrat:wght@200;300&family=Titillium+Web:wght@700&display=swap" rel="stylesheet"> 
 </head>
 <body>
-  <section class="Theme-TextSection" style="height: 33vh;">
+  <audio id="backgroundAudio" loop>
+    <source src="https://staticcontent.america.gov/uploads/2023/08/Space-Sound-Loop.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+  
+  <div class="audio-toggle">
+    <button type="button" id="toggleButton" class="audio-button play" aria-label="Toggle Audio"></button>
+  </div>
+  <section class="Theme-TextSection" style="height: 50vh;">
+    <div style="text-align: center">
+      <img src="https://staticcontent.america.gov/uploads/2023/08/ISS_Icon.png" class="floating" alt="Floating Image" style="width: 200px; height: 200px; margin-bottom: -5px;">
+      <h2 class="floating space-font" style="margin-top: 10px;">INTRODUCTION</h2>
+      <hr>
+    </div>
+  </section>
+  <section class="Theme-TextSection" style="height: 50vh;">
     <p>test</p>
   </section>
-  <section class="Theme-TextSection" style="height: 33vh;">
+  <section class="Theme-TextSection" style="height: 50vh;">
     <p>test</p>
   </section>
-  <section class="Theme-TextSection" style="height: 33vh;">
+  <section class="Theme-TextSection" style="height: 50vh;">
     <p>test</p>
   </section>
+  <section class="Theme-TextSection" style="height: 50vh;">
+   <div class="video-embed">
+    <div class="video-wrapper">
+      <video controls>
+        <source src="https://staticcontent.america.gov/uploads/2023/08/honey-bee-collecting-nectar-on-a-daisy-selective-focus-shot-with-shallow-depth-of-f-SBV-338587628-HD.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+    <div class="video-caption">
+      <p>Exploring the Cosmos</p>
+      <cite>Video by NASA</cite>
+    </div>
+  </div>
+  </section>
+  <section class="Theme-TextSection" style="height: 50vh;">
+    <p>test</p>
+  </section>
+  <div class="scroll-progress-container">
+    <!-- Add circles or images as indicators -->
+    <div class="scroll-progress-circle"></div>
+    <div class="scroll-progress-circle"></div>
+    <div class="scroll-progress-circle"></div>
+    <div class="scroll-progress-circle"></div>
+    <div class="scroll-progress-circle"></div>
+    <div class="scroll-progress-circle"></div>
+    <div class="scroll-progress-circle"></div>
+  </div>
   <script src="./space.js" type="text/javascript"></script>
 </body>
 </html>
