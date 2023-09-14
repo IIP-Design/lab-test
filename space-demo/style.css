@@ -1,0 +1,462 @@
+body {
+  margin: 0;
+  padding: 0;
+} 
+
+body::-webkit-scrollbar{
+  display: none;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.example::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.example {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.audio-toggle {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+}
+
+.audio-button {
+  width: 30px;
+  height: 30px;
+  background-color: transparent; /* Set background to transparent */
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain; /* Adjusted to 'contain' */
+  border: none;
+  cursor: pointer;
+  transition: background-image 0.3s ease-in-out;
+}
+
+.audio-button.play {
+  background-image: url('https://staticcontent.america.gov/uploads/2023/08/Mute-Icon.png'); /* Change to your play button image */
+}
+
+.audio-button.pause {
+  background-image: url('https://staticcontent.america.gov/uploads/2023/08/Speaker-icon.png'); /* Change to your pause button image */
+}
+
+.scroll-progress-container {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.scroll-progress-circle {
+  width: 20px; /* Adjust the size of the circle */
+  height: 20px; /* Adjust the size of the circle */
+  background-color: #f0f0f0; /* Background color of the circle */
+  margin: 8px 0; /* Adjust the spacing between circles */
+  border-radius: 50%;
+}
+
+.scroll-progress-active {
+  background-color: #3498db; /* Color of the active circle */
+}
+
+.Theme-TextSection {
+  position: relative;
+  background-color: #000022;
+  /*height: 100vh;*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+}
+
+article2 {
+  max-width: 600px;
+  text-align: center;
+  padding: 20px;
+  color: #fff;
+} 
+
+.floating {
+  position: relative;
+  animation: float 4s infinite ease-in-out;
+}
+
+.space-font {
+  font-family: "Titillium Web Bold", sans-serif;
+  color: #e0e0e0;
+  font-size: 36px;
+}
+
+.shooting-star {
+  position: absolute;
+  width: 7px;
+  height: 7px;
+  background-color: #fff;
+  border-radius: 70%;
+  /*animation: shooting-star 2s linear infinite;*/
+  animation: shooting-star-diagonal 2s linear infinite;
+}
+
+.shooting-star:nth-child(2) {
+  animation-delay: 3s;
+}
+
+.shooting-star:nth-child(3) {
+  animation-delay: 6s;
+}
+
+/*@keyframes shooting-star {
+  0% {
+    opacity: 1;
+    transform: translate(var(--startX), var(--startY));
+  }
+  100% {
+    opacity: 0;
+    transform: translate(var(--endX), var(--endY));
+  }
+}*/
+
+
+.star {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background-color: #fff;
+  border-radius: 50%;
+  animation: twinkling 2s infinite;
+}
+
+.meteor {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+  animation: meteor-fall 2s linear infinite;
+  transform: rotate(-45deg);
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/*@keyframes shooting-star {
+  0% {
+    left: 100%;
+    top: 0%;
+    opacity: 1;
+    transform: rotate(calc(-45deg + var(--random-angle, 0deg)));
+  }
+  100% {
+    left: -20%;
+    top: 100%;
+    opacity: 0;
+    transform: rotate(calc(45deg + var(--random-angle, 0deg)));
+  }
+}*/
+
+/* Shooting Star Animation */
+@keyframes shooting-star-diagonal {
+  0% {
+    left: 100%;
+    top: 0%;
+    opacity: 1;
+    transform: rotate(calc(-45deg + var(--random-angle, 0deg)));
+  }
+  100% {
+    left: -20%;
+    top: 100%;
+    opacity: 0;
+    transform: rotate(calc(45deg + var(--random-angle, 0deg)));
+  }
+}
+
+@keyframes twinkling {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+@keyframes meteor-fall {
+  0% {
+    opacity: 1;
+    transform: rotate(-45deg) translate(-20%, -20%);
+  }
+  100% {
+    opacity: 0;
+    transform: rotate(-45deg) translate(150%, 150%);
+  }
+}
+
+.pull-quote {
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-left: 3px solid #fff;
+  padding: 10px 20px;
+  margin: 20px auto;
+  /*max-width: 400px;*/
+}
+
+.pull-quote p {
+  font-family: "Titillium Web", sans-serif;
+  font-size: 24px;
+  color: #fff;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.pull-quote cite {
+  font-family: "Titillium Web", sans-serif;
+  color: #999;
+  font-size: 18px;
+  font-style: italic;
+}
+
+/* Responsive styles for smaller screens */
+@media screen and (max-width: 768px) {
+  .Theme-TextSection {
+    height: auto;
+    padding: 20px;
+  }
+  
+  article2 {
+    max-width: 100%;
+    font-size: 18px;
+    padding: 10px;
+  }
+  
+  .space-font {
+    font-size: 28px;
+  }
+
+  .shooting-star,
+  .star,
+  .meteor {
+    width: 2px;
+    height: 2px;
+  }
+
+  .floating-image.spaceship {
+    width: 40px;
+    height: 75px;
+  }
+
+  .floating-image.satellite {
+    width: 60px;
+    height: 56px;
+  }
+
+  .floating-image.asteroid {
+    width: 60px;
+    height: 34px;
+  }
+}
+
+.floating-image {
+  position: absolute;
+  background-size: cover;
+  animation: floatImage 10s linear forwards;
+  opacity: 1;
+}
+
+.floating-image.spaceship {
+  background-image: url('https://staticcontent.america.gov/uploads/2023/08/Astronaut.png');
+  width: 60px;
+  height: 115px;
+}
+
+.floating-image.satellite {
+  background-image: url('https://staticcontent.america.gov/uploads/2023/08/Satellite.png');
+  width: 100px;
+  height: 93px;
+}
+
+.floating-image.asteroid {
+  background-image: url('https://staticcontent.america.gov/uploads/2023/08/Asteroid-2.png');
+  width: 100px;
+  height: 56px;
+}
+
+.floating-image.satellite2 {
+  background-image: url('https://staticcontent.america.gov/uploads/2023/08/Satellite-2-1.png');
+  width: 110px;
+  height: 103px;
+}
+
+.floating-image.astronaut {
+  background-image: url('https://staticcontent.america.gov/uploads/2023/08/Astronaut-2.png');
+  width: 60px;
+  height: 109px;
+}
+
+@keyframes floatImage {
+  0% {
+    opacity: 0;
+    transform: translate(var(--startX), var(--startY)) scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(var(--endX), var(--endY)) scale(1);
+  }
+}
+
+#section-yUWvryZQJc {
+  display: none;
+}
+
+
+/* Photo Embed */
+.photo-embed {
+  margin: 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fff;
+  border: 2px solid #000022; /* Dark blue color */
+  border-radius: 8px;
+  padding: 10px; /* Reduced padding */
+  position: relative; /* Add this line to create a relative positioning context */
+}
+
+/* Photo Embed Caption Styles */
+.caption {
+  text-align: center;
+  color: #000222; /* Darker blue color for high contrast */
+  margin-top: 10px; /* Adjust the margin as needed */
+  font-family: Arial, sans-serif; /* Use Arial font with sans-serif as fallback */
+  position: relative;
+  padding-top: 5px; /* Add a bit of space above the caption */
+}
+
+.caption p {
+  font-size: 14px; /* Adjust the font size as needed */
+  line-height: 1.4;
+  margin: 5px 0;
+  font-weight: bold;
+}
+
+.caption cite {
+  font-style: italic;
+  color: #6B697D; /* Medium gray color for credit */
+  font-size: 11px; /* Adjust the font size as needed */
+  margin-top: 3px;
+  font-family: Helvetica, Arial, sans-serif; /* Use Helvetica font with Arial and sans-serif as fallbacks */
+  font-weight: normal;
+}
+
+
+
+/* Video Embed */
+.video-embed {
+  margin: 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fff;
+  border: 2px solid #000022; /* Dark blue color */
+  border-radius: 8px;
+  padding: 10px; /* Reduced padding */
+  position: relative; /* Add this line to create a relative positioning context */
+}
+
+.video-wrapper {
+  width: 100%;
+  overflow: hidden;
+}
+
+.video-wrapper video {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+}
+
+/* Video Embed Caption Styles */
+.video-caption {
+  text-align: center;
+  color: #000222; /* Darker blue color for high contrast */
+  margin-top: 10px; /* Adjust the margin as needed */
+  font-family: Arial, sans-serif; /* Use Arial font with sans-serif as fallback */
+  position: relative;
+  padding-top: 5px; /* Add a bit of space above the caption */
+}
+
+.video-caption p {
+  font-size: 14px; /* Adjust the font size as needed */
+  line-height: 1.4;
+  margin: 5px 0;
+  font-weight: bold;
+}
+
+.video-caption cite {
+  font-style: italic;
+  color: #6B697D; /* Medium gray color for credit */
+  font-size: 11px; /* Adjust the font size as needed */
+  margin-top: 3px;
+  font-family: Helvetica, Arial, sans-serif; /* Use Helvetica font with Arial and sans-serif as fallbacks */
+  font-weight: normal;
+}
+
+
+  .fade-in-text {
+    text-align: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+  }
+
+  .fade-in-text.show {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .scroll-text {
+    font-family: 'open sans';
+    font-weight: bold;
+    font-size: 12px; /* Adjust font size as needed */
+    color: white;
+    margin: 5px 0;
+  }
+
+  .scroll-symbol {
+    font-size: 18px; /* Adjust font size as needed */
+    margin-top: -5px; /* Adjust margin as needed */
+    color: white;
+  }
+
+.space-dust {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 1px;
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.4);
+  animation: drift 10s linear infinite;
+  z-index: -1;
+}
+
+@keyframes drift {
+  from {
+    transform: translateX(0) translateY(0);
+  }
+  to {
+    transform: translateX(100vw) translateY(100vh);
+  }
+}
