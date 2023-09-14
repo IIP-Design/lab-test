@@ -22,6 +22,7 @@ body::-webkit-scrollbar{
   position: fixed;
   top: 10px;
   right: 10px;
+  z-index: 1;
 }
 
 .audio-button {
@@ -71,7 +72,6 @@ body::-webkit-scrollbar{
 .Theme-TextSection {
   position: relative;
   background-color: #000022;
-  /*height: 100vh;*/
   display: flex;
   justify-content: center;
   align-items: center;
@@ -79,16 +79,18 @@ body::-webkit-scrollbar{
   position: relative;
 }
 
-article2 {
-  max-width: 600px;
-  text-align: center;
-  padding: 20px;
-  color: #fff;
-} 
-
 .floating {
   position: relative;
   animation: float 4s infinite ease-in-out;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
 }
 
 .space-font {
@@ -99,12 +101,8 @@ article2 {
 
 .shooting-star {
   position: absolute;
-  width: 7px;
-  height: 7px;
   background-color: #fff;
   border-radius: 70%;
-  /*animation: shooting-star 2s linear infinite;*/
-  animation: shooting-star-diagonal 2s linear infinite;
 }
 
 .shooting-star:nth-child(2) {
@@ -114,18 +112,6 @@ article2 {
 .shooting-star:nth-child(3) {
   animation-delay: 6s;
 }
-
-/*@keyframes shooting-star {
-  0% {
-    opacity: 1;
-    transform: translate(var(--startX), var(--startY));
-  }
-  100% {
-    opacity: 0;
-    transform: translate(var(--endX), var(--endY));
-  }
-}*/
-
 
 .star {
   position: absolute;
@@ -144,46 +130,6 @@ article2 {
   border-radius: 50%;
   animation: meteor-fall 2s linear infinite;
   transform: rotate(-45deg);
-}
-
-@keyframes float {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
-}
-
-/*@keyframes shooting-star {
-  0% {
-    left: 100%;
-    top: 0%;
-    opacity: 1;
-    transform: rotate(calc(-45deg + var(--random-angle, 0deg)));
-  }
-  100% {
-    left: -20%;
-    top: 100%;
-    opacity: 0;
-    transform: rotate(calc(45deg + var(--random-angle, 0deg)));
-  }
-}*/
-
-/* Shooting Star Animation */
-@keyframes shooting-star-diagonal {
-  0% {
-    left: 100%;
-    top: 0%;
-    opacity: 1;
-    transform: rotate(calc(-45deg + var(--random-angle, 0deg)));
-  }
-  100% {
-    left: -20%;
-    top: 100%;
-    opacity: 0;
-    transform: rotate(calc(45deg + var(--random-angle, 0deg)));
-  }
 }
 
 @keyframes twinkling {
@@ -212,7 +158,6 @@ article2 {
   border-left: 3px solid #fff;
   padding: 10px 20px;
   margin: 20px auto;
-  /*max-width: 400px;*/
 }
 
 .pull-quote p {
@@ -235,12 +180,6 @@ article2 {
   .Theme-TextSection {
     height: auto;
     padding: 20px;
-  }
-  
-  article2 {
-    max-width: 100%;
-    font-size: 18px;
-    padding: 10px;
   }
   
   .space-font {
@@ -273,7 +212,6 @@ article2 {
 .floating-image {
   position: absolute;
   background-size: cover;
-  animation: floatImage 10s linear forwards;
   opacity: 1;
 }
 
@@ -307,21 +245,9 @@ article2 {
   height: 109px;
 }
 
-@keyframes floatImage {
-  0% {
-    opacity: 0;
-    transform: translate(var(--startX), var(--startY)) scale(0.5);
-  }
-  100% {
-    opacity: 1;
-    transform: translate(var(--endX), var(--endY)) scale(1);
-  }
-}
-
 #section-yUWvryZQJc {
   display: none;
 }
-
 
 /* Photo Embed */
 .photo-embed {
@@ -361,8 +287,6 @@ article2 {
   font-family: Helvetica, Arial, sans-serif; /* Use Helvetica font with Arial and sans-serif as fallbacks */
   font-weight: normal;
 }
-
-
 
 /* Video Embed */
 .video-embed {
@@ -457,6 +381,6 @@ article2 {
     transform: translateX(0) translateY(0);
   }
   to {
-    transform: translateX(100vw) translateY(100vh);
+    transform: translateX(100%) translateY(100%);
   }
 }

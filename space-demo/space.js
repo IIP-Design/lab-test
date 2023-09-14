@@ -1,3 +1,4 @@
+/* SCROLL ANIMATION */
 const circles = document.querySelectorAll( '.scroll-progress-circle' );
 
 window.addEventListener( 'scroll', () => {
@@ -14,7 +15,7 @@ window.addEventListener( 'scroll', () => {
   } );
 } );
 
-
+/* AUDIO HANDLER */
 const audio = document.getElementById( 'backgroundAudio' );
 const toggleButton = document.getElementById( 'toggleButton' );
 
@@ -30,152 +31,151 @@ toggleButton.addEventListener( 'click', () => {
   }
 } );
 
-
-const sections = document.querySelectorAll( '.Theme-TextSection' );
+/* SPACE ANIMATION */
+const randomPercentage = () => `${Math.random() * 100}%`;
+const randomPixels = () => `${Math.random() * 2}px`;
 
 // Function to create random stars on the background
-function createStars() {
-  console.log( 'stars' );
-  const numStars = 7500; // Reduce the number of stars
+function createStars( el ) {
+  const numStars = 500; // Reduce the number of stars
 
-  for ( const section of sections ) {
-    for ( let i = 0; i < numStars; i++ ) {
-      const star = document.createElement( 'div' );
+  for ( let i = 0; i < numStars; i++ ) {
+    const star = document.createElement( 'div' );
 
-      star.classList.add( 'star' );
-      star.style.left = `${Math.random() * 100}%`;
-      star.style.top = `${Math.random() * 100}%`;
-      star.style.width = `${Math.random() * 2}px`;
-      star.style.height = `${Math.random() * 2}px`;
-      section.appendChild( star );
-    }
+    star.classList.add( 'star' );
+    star.style.left = randomPercentage();
+    star.style.top = randomPercentage();
+    star.style.width = randomPixels();
+    star.style.height = randomPixels();
+
+    el.appendChild( star );
   }
 }
 
 // Function to add shooting stars at intervals
-function addShootingStars() {
-  for ( const section of sections ) {
-    const shootingStar = document.createElement( 'div' );
+function addShootingStars( el ) {
+  const SHOOTING_STAR_DURATION = 2000; // milliseconds
+  const shootingStar = document.createElement( 'div' );
 
-    shootingStar.classList.add( 'shooting-star' );
+  shootingStar.classList.add( 'shooting-star' );
+  shootingStar.style.left = randomPercentage();
+  shootingStar.style.top = randomPercentage();
 
-    // Randomize the starting position of the shooting star
-    const randomStartX = `${Math.random() * 100}%`;
-    const randomStartY = `${Math.random() * 100}%`;
+  shootingStar.animate( [
+    {
+      opacity: 1,
+      width: '3px',
+      height: '3px',
+    },
+    {
+      opacity: 0.5,
+      width: '7px',
+      height: '7px',
+    },
+    {
+      left: randomPercentage(),
+      top: randomPercentage(),
+      opacity: 0,
+      width: '1px',
+      height: '1px',
+    },
+  ], {
+    duration: SHOOTING_STAR_DURATION,
+    iterations: 1,
+  } );
 
-    shootingStar.style.setProperty( '--startX', randomStartX );
-    shootingStar.style.setProperty( '--startY', randomStartY );
+  el.appendChild( shootingStar );
 
-    // Randomize the ending position of the shooting star
-    const randomEndX = `${Math.random() * 100}%`; // Random end X position
-    const randomEndY = `${Math.random() * 100}%`; // Random end Y position
-
-    shootingStar.style.setProperty( '--endX', randomEndX );
-    shootingStar.style.setProperty( '--endY', randomEndY );
-
-    section.appendChild( shootingStar );
-    setTimeout( () => {
-      shootingStar.remove();
-    }, 5000 ); // Duration of shooting star animation in milliseconds
-  }
+  setTimeout( () => {
+    shootingStar.remove();
+  }, SHOOTING_STAR_DURATION ); // Duration of shooting star animation in milliseconds
 }
-
-// Add shooting stars every 30 seconds to reduce the frequency
-setInterval( () => {
-  addShootingStars();
-}, 8000 ); // 10 seconds
-
-// Initial setup
-createStars();
-
-// Function to add meteor showers at intervals
-function addMeteorShowers() {
-  for ( const section of sections ) {
-    const meteor = document.createElement( 'div' );
-
-    meteor.classList.add( 'meteor' );
-    meteor.style.left = `${Math.random() * 100}%`;
-    meteor.style.top = `${Math.random() * 100}%`;
-    section.appendChild( meteor );
-    setTimeout( () => {
-      meteor.remove();
-    }, 5000 ); // Duration of meteor shower in milliseconds
-  }
-}
-
-// Add meteor showers every 15 seconds to reduce the frequency
-setInterval( () => {
-  addMeteorShowers();
-}, 12000 );
-
 
 // Function to add floating images at random intervals
-function addFloatingImages() {
-  for ( const section of sections ) {
-    const floatingImage = document.createElement( 'div' );
+function addFloatingImages( el ) {
+  const floatingImage = document.createElement( 'div' );
 
-    floatingImage.classList.add( 'floating-image' );
+  floatingImage.classList.add( 'floating-image' );
 
-    const imageClasses = [
-      'spaceship', 'satellite', 'asteroid', 'satellite2', 'astronaut',
-    ];
-    const randomImageClass = imageClasses[Math.floor( Math.random() * imageClasses.length )];
+  const imageClasses = [
+    'spaceship', 'satellite', 'asteroid', 'satellite2', 'astronaut',
+  ];
 
-    floatingImage.classList.add( randomImageClass );
+  const randomImageClass = imageClasses[Math.floor( Math.random() * imageClasses.length )];
 
-    const side = Math.floor( Math.random() * 4 ); // 0: top, 1: right, 2: bottom, 3: left
-    let randomStartX; let randomStartY; let randomEndX; let
-      randomEndY;
+  floatingImage.classList.add( randomImageClass );
 
-    if ( side === 1 ) {
-      randomStartX = `${window.innerWidth + 50}px`; // Start from outside the right margin
-      randomStartY = `${Math.random() * document.body.clientHeight}px`;
-      randomEndX = '-50px'; // End outside the left margin
-      randomEndY = randomStartY;
-    } else if ( side === 2 ) {
-      randomStartX = `${Math.random() * window.innerWidth}px`;
-      randomStartY = `${document.body.clientHeight + 50}px`; // Start from below the bottom margin
-      randomEndX = randomStartX;
-      randomEndY = '-50px'; // End above the top margin
-    } else {
-      randomStartX = '-50px'; // Start from outside the left margin
-      randomStartY = `${Math.random() * document.body.clientHeight}px`;
-      randomEndX = `${window.innerWidth + 50}px`; // End outside the right margin
-      randomEndY = randomStartY;
-    }
+  const side = Math.floor( Math.random() * 4 ); // 0: top, 1: right, 2: bottom, 3: left
 
+  let randomStartX; let randomStartY; let randomEndX; let
+    randomEndY;
 
-    floatingImage.style.left = randomStartX;
-    floatingImage.style.top = randomStartY;
-    floatingImage.style.setProperty( '--endX', randomEndX );
-    floatingImage.style.setProperty( '--endY', randomEndY );
-
-    section.appendChild( floatingImage );
-
-    // Calculate the animation duration based on distance
-    const deltaX = Math.abs( parseFloat( randomEndX ) - parseFloat( randomStartX ) );
-    const deltaY = Math.abs( parseFloat( randomEndY ) - parseFloat( randomStartY ) );
-    const distance = Math.sqrt( deltaX * deltaX + deltaY * deltaY );
-    const animationDuration = Math.max( 10000, distance * 10 ); // Minimum 8 seconds
-
-    // Start the animation
-    requestAnimationFrame( () => {
-      floatingImage.style.transition = `transform ${animationDuration}ms linear`;
-      floatingImage.style.transform = `translate(${randomEndX}, ${randomEndY})`;
-    } );
-
-    // Remove the image after animation duration + buffer time
-    setTimeout( () => {
-      floatingImage.remove();
-    }, animationDuration + 8000 ); // Add some buffer time
+  if ( side === 1 ) {
+    randomStartX = `${window.innerWidth + 50}px`; // Start from outside the right margin
+    randomStartY = `${Math.random() * document.body.clientHeight}px`;
+    randomEndX = '-50px'; // End outside the left margin
+    randomEndY = randomStartY;
+  } else if ( side === 2 ) {
+    randomStartX = `${Math.random() * window.innerWidth}px`;
+    randomStartY = `${document.body.clientHeight + 50}px`; // Start from below the bottom margin
+    randomEndX = randomStartX;
+    randomEndY = '-50px'; // End above the top margin
+  } else {
+    randomStartX = '-50px'; // Start from outside the left margin
+    randomStartY = `${Math.random() * document.body.clientHeight}px`;
+    randomEndX = `${window.innerWidth + 50}px`; // End outside the right margin
+    randomEndY = randomStartY;
   }
+
+  floatingImage.style.left = randomStartX;
+  floatingImage.style.top = randomStartY;
+
+  // Calculate the animation duration based on distance
+  const deltaX = Math.abs( parseFloat( randomEndX ) - parseFloat( randomStartX ) );
+  const deltaY = Math.abs( parseFloat( randomEndY ) - parseFloat( randomStartY ) );
+  const distance = Math.sqrt( deltaX * deltaX + deltaY * deltaY );
+  const animationDuration = Math.max( 10000, distance * 10 ); // Minimum 8 seconds
+
+  floatingImage.animate( [
+    { transform: 'scale(0.5)' },
+    { transform: 'scale(1)' },
+    { left: randomEndX, top: randomEndY, transform: 'scale(0.5)' },
+  ], {
+    duration: animationDuration,
+    easing: 'ease-in',
+    iterations: 1,
+  } );
+
+  el.appendChild( floatingImage );
+
+  // Remove the image after animation duration + buffer time
+  setTimeout( () => {
+    floatingImage.remove();
+  }, animationDuration );
 }
 
-// Add floating images at random intervals
-setInterval( () => {
-  addFloatingImages();
-}, 5000 );
+const initializeAnimations = el => {
+  createStars( el );
+  // // Add shooting stars every 30 seconds to reduce the frequency
+  setInterval( () => {
+    addShootingStars( el );
+  }, 8000 ); // 10 seconds
+};
 
+window.onload = () => {
+  const sections = document.querySelectorAll( '.Theme-TextSection' );
+
+  [...sections].forEach( section => initializeAnimations( section ) );
+
+  const body = document.querySelector( 'body' );
+
+  // Add floating images at random intervals
+  setInterval( () => {
+    addFloatingImages( body );
+  }, 10000 );
+};
+
+/* VIDEO EMBED */
 // Adjust video player size based on window width
 function adjustVideoSize() {
   const video = document.querySelector( 'video' );
@@ -205,6 +205,7 @@ function playVideoOnScroll( entries, observer ) {
 const videoObserver = new IntersectionObserver( playVideoOnScroll, {
   threshold: 0.5, // Play video when at least 50% visible
 } );
+
 const videoWrapper = document.querySelector( '.video-wrapper' );
 
 videoObserver.observe( videoWrapper );
@@ -221,21 +222,3 @@ function showText() {
   delayedText.style.visibility = 'visible';
   delayedText.style.opacity = '1';
 }
-
-function createSpaceDust() {
-  const numParticles = 1000;
-
-  for ( const section of sections ) {
-    for ( let i = 0; i < numParticles; i++ ) {
-      const dust = document.createElement( 'div' );
-
-      dust.classList.add( 'space-dust' );
-      dust.style.left = `${Math.random() * 100}%`;
-      dust.style.top = `${Math.random() * 100}%`;
-      section.appendChild( dust );
-    }
-  }
-}
-
-// Call the function to create space dust particles
-createSpaceDust();
