@@ -329,6 +329,9 @@ const showAnswers = () => {
 
   if ( answers ) {
     answers.classList.add( 'show' );
+
+    // Scroll to the answers section.
+    answers.scrollIntoView( { behavior: 'smooth', block: 'start' } );
   }
 
   if ( btn ) {
