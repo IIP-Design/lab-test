@@ -1,0 +1,185 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #f0f0f0;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 800px;
+  width: 100%;
+  text-align: center;
+  margin: auto;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+h1 {
+  color: #333;
+}
+
+#eventsContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.event {
+  background-color: #faecc8;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  width: 100%;
+  max-width: 600px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  position: relative;
+
+  display: grid;
+  grid-template-columns: 1fr 75px;
+  gap: 0.5rem;
+}
+
+.event-content {
+  padding: 20px;
+  text-align: left;
+}
+
+.event img {
+  max-width: 100%;
+  border-radius: 8px;
+  margin-bottom: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.event-content .caption {
+  font-size: 10px;
+  text-align: right;
+  margin-bottom: 5px;
+}
+
+.details-container {
+  padding-left: 0.5rem 0;
+}
+
+.image-container {
+  margin: 0 0 0.5rem;
+}
+
+.arrows {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+}
+
+.arrow {
+  cursor: pointer;
+  font-size: 24px;
+  color: #fff;
+  background-color: #007bff;
+  border: 2px solid #007bff;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.arrow:hover {
+  background-color: #0056b3;
+  border-color: #0056b3;
+}
+
+.arrow:focus {
+  outline: solid 3px #0056b3;
+}
+
+.arrow.disabled {
+  background-color: #ccc;
+  border-color: #ccc;
+  cursor: not-allowed;
+}
+
+#messageContainer {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 15px;
+  background-color: white;
+  border: 1px solid #2980b9;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  font-weight: bold;
+  visibility: hidden;
+}
+
+#messageContainer.show {
+  display: block;
+  visibility: visible;
+}
+
+#messageContainer ol {
+  text-align: left;
+}
+
+#messageContainer p {
+  text-align: center;
+}
+
+#correct-answers {
+  display: none;
+}
+
+#correct-answers.show {
+  display: block;
+}
+
+#messageContainer.show .message-content {
+  display: block;
+}
+
+/* Apply the same button styles to the buttons within the message container */
+#messageContainer.show button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin: 0 10px;
+}
+
+#messageContainer.show button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin: 0 10px;
+}
+
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
